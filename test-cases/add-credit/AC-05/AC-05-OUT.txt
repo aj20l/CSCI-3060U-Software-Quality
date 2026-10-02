@@ -1,0 +1,15 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Add credit transaction initialized
+“Enter username to add credit too”
+Username rejected
+Add credit transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+transactionUser: “Jane Doe”
+transactionMode: “admin”
+transactionTarget: “Not A User”
+message: “transaction rejected, targeted user does not exist”
+status: “rejected”

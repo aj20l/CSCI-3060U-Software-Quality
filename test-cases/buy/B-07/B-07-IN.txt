@@ -1,0 +1,7 @@
+Login - transaction call
+username: “Richard Roe”
+
+Buy transaction - transaction call
+buy-game: “game”
+
+Print daily transaction - transaction call

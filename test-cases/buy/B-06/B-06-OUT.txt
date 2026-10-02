@@ -1,0 +1,9 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+Game bought!
+Buy transaction accepted
+<buy-game> is now in your account!
