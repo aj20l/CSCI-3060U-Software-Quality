@@ -1,0 +1,4 @@
+"John Doe"
+"correctPassword"
+login
+list-games

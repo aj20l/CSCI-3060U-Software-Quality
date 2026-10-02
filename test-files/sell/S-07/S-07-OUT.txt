@@ -1,0 +1,11 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Game listing created
+Sell transaction accepted
+
+“Enter transaction”
+<daily transaction file>

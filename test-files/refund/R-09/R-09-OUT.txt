@@ -1,0 +1,23 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Enter the amount being refunded”
+Refund amount rejected
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Roe”
+buyersPrivilege: “buy-standard”
+buyersBalance: 0
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 100.00
+refundAmount: -100.00
+message: “refund transaction rejected, an invalid refund amount has been inputted”
+status: “rejected”

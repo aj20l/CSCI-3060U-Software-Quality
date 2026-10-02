@@ -1,0 +1,21 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+<user> deleted
+Delete transaction accepted
+
+“Enter transaction”
+Add credit transaction initialized 
+“Enter name of user”
+User does not exist
+Add credit transaction rejected
+
+“Enter transaction”
+Logout transaction accepted
+
+“Login to account”
+User does not exist
+Login rejected

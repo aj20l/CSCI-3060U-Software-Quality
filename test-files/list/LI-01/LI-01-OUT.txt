@@ -1,0 +1,7 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+List-games-for-sale transaction initialized 
+<games for sale>
+List-games-for-sale accepted

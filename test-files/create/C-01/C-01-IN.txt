@@ -1,0 +1,6 @@
+login
+"Jane Doe"
+"correctPassword"
+create
+Username:"thisNameIsTooLong"
+UserType:”standard”

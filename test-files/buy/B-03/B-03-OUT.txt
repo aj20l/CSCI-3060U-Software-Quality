@@ -1,0 +1,14 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+User already owns the game
+Buy transaction rejected
+
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+Game selected
+Game bought!
+Buy transaction accepted

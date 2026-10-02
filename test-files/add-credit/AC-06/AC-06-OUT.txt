@@ -1,0 +1,20 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Add credit transaction initialized
+“Enter username to add credit too”
+Username accepted
+“Enter amount”
+Amount rejected
+Add credit transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+transactionUser: “Jane Doe”
+transactionMode: “admin”
+transactionTarget: “John Doe”
+transactionAmount: -100.00
+currentBalance: 0
+sessionTotal: 0
+message: “transaction rejected, invalid credit amount submitted”
+status: “rejected

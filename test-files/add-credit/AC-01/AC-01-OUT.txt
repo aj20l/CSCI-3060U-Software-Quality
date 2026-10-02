@@ -1,0 +1,22 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Add credit transaction initialized
+“Enter username to add credit too”
+Username accepted
+“Enter amount”
+Amount accepted
+Add credit transaction accepted
+Add credit transaction logged
+“Added $100.00 credits to balance of Jane Doe”
+“Enter transaction”
+Logout transaction accepted
+
+transactionUser: “Jane Doe”
+transactionMode: “admin”
+transactionTarget: “John Doe”
+transactionAmount: 100.00
+currentBalance: 100.00
+sessionTotal: 100.00
+message: “added 100.00 credits to user Jane Doe”
+status: “accepted”

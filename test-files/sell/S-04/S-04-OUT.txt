@@ -1,0 +1,8 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Rejected: Game with that name is already listed
+Sell transaction rejected

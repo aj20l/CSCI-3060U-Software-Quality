@@ -1,0 +1,7 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+User is not able to sell games
+Sell transaction rejected
