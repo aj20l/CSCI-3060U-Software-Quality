@@ -1,0 +1,20 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username rejected
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Doe”
+buyersPrivilege: “admin”
+buyersBalance: 0
+seller: “Jane Roe”
+sellersPrivilege: “buy-standard”
+sellersBalance: 100.00
+message: “refund transaction rejected, the targeted seller does not have proper privileges to refund”
+status: “rejected”

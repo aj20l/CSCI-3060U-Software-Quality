@@ -1,0 +1,27 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Enter the amount being refunded”
+Refund amount accepted
+“Enter the game being refunded”
+Game name accepted
+“Seller cannot complete the refund”
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Doe”
+buyersPrivilege: “admin”
+buyersBalance: 0.00
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 0.00
+refundAmount: 100.00
+refundedGame: “Slay The Spire”
+message: “refund transaction rejected, seller does not have the credits for the refund“
+status: “rejected”

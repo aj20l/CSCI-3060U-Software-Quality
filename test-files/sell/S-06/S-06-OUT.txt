@@ -1,0 +1,26 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Game listing created
+Sell transaction accepted
+
+“Enter transaction”
+Buy transaction initialized 
+“Enter game name”
+Rejected: Game not available until next login session
+Buy transaction rejected
+
+“Enter transaction”
+Logout transaction accepted 
+
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Buy transaction initialized 
+“Enter game name”
+“Game bought!”
+Buy transaction accepted

@@ -1,0 +1,27 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Enter the amount being refunded”
+Refund amount accepted
+“Enter the game being refunded”
+Game name accepted
+Game was not sold by seller
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “John Doe”
+buyersPrivilege: “full-standard”
+buyersBalance: 0
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 100.00
+refundAmount: 100.00
+refundedGame: “Halo”
+message: “refund transaction rejected, Halo was not sold by the seller”
+status: “rejected”

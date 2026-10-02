@@ -1,0 +1,7 @@
+login
+"Jane Doe"
+"correctPassword"
+create
+Username:"newUser"
+UserType:”admin”
+Write to daily Transaction

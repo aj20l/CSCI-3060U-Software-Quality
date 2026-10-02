@@ -1,0 +1,7 @@
+login
+"Jane Doe"
+"correctPassword"
+create
+Username:"NewUser"
+UserType:”buy-standard”
+

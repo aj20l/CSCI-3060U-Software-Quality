@@ -1,0 +1,2 @@
+“Logout recorded”
+00_validUser_BS_999999.99

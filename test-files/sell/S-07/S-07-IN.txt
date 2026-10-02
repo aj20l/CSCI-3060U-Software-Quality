@@ -1,0 +1,7 @@
+Login - transaction call
+username: “Admin”
+
+Sell transaction - transaction call
+Game listing information: “game”, 50 
+
+Print daily transaction - transaction call

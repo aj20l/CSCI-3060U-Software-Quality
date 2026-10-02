@@ -1,0 +1,14 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Game listing created
+Sell transaction accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Rejected: Name is more than 25 characters
+Sell transaction rejected

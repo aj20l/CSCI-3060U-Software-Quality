@@ -1,0 +1,8 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Price or name invalid
+Sell transaction rejected

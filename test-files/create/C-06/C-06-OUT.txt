@@ -1,0 +1,1 @@
+“Error: credits above 999999, account creation failed”

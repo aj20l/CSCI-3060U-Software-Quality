@@ -1,0 +1,14 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Buy transaction initialized 
+“Enter the seller’s username”
+“Enter the game’s name”
+Buy transaction rejected
+“Enter the seller’s username”
+“Enter the game’s name”
+Buy transaction rejected
+“Enter the seller’s username”
+“Enter the game’s name”
+Buy transaction accepted

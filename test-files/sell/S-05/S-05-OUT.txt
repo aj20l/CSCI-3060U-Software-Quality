@@ -1,0 +1,14 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Game listing created
+Sell transaction accepted
+
+“Enter transaction”
+Sell transaction initialized 
+“Enter game listing information”
+Rejected: Listed price is above 999.99
+Sell transaction rejected

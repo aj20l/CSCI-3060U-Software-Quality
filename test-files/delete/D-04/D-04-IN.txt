@@ -1,0 +1,13 @@
+Login - transaction call
+username: “Admin”
+
+Delete user transaction - transaction call
+delete: “user-that-exists”
+
+Add credit - transaction call
+username: “user-that-exists”
+
+Logout - transaction call
+
+Login - transaction call
+username: “user-that-exists”
