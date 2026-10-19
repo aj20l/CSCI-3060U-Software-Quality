@@ -3,9 +3,10 @@
 class FrontEnd {
 public:
     FrontEnd() = default;
-    void Interface();
     void startSession();
-
+    void loginInterface();
+    void storeInterface();
+    
 private:
     Session currentSession;
 };

@@ -11,7 +11,7 @@ bool Session::login() {
     // valdation logic for inputs go here
 
     currentUser = userManager.authenticateLogin(username, password);
-    if(currentUser) {
+    if(!currentUser) {
         std::cout << "Login failed\n";
         return false;
     }

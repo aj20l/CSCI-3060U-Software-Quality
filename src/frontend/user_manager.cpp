@@ -1,5 +1,9 @@
 #include "user_manager.h"
 
+UserManager::UserManager() {
+    users.push_back(new User("test", "test", ADMIN));
+}
+
 User* UserManager::authenticateLogin(std::string username, std::string password) {
     User* user = getUser(username);
     if (!user) {
