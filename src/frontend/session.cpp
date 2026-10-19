@@ -1,4 +1,5 @@
-#include "managers.cpp"
+#include "user_manager.cpp"
+#include "payment_processor.cpp"
 
 class Session {
     public:
@@ -11,33 +12,32 @@ class Session {
             std::cin >> username;
             std::cout << "Enter your password: ";
             std::cin >> password;
+            
+            // valdation logic for inputs go here
 
-            currentUser = userManager.getUser(username);
+            currentUser = userManager.authenticateLogin(username, password);
             if(!currentUser) {
-            	std::cout<<"User does not exist";
+            	std::cout << "Login failed\n";
                 return false;
             }
 
-            if(!currentUser->checkPassword(password)) {
-                return false;
-            }
-
-            if(currentUser->isActive()) {
-                std::cout << "The current user already has a session\n";
-                return false;
-            }
-
-            currentUser->setUserActive();
+            sessionActive = true;
             std::cout << "Login successful\n";
             return true;
         }
         bool logout() {
-            currentUser->setUserActive();
-            
+            if(!userManager.authenticateLogout(currentUser)) {
+                std::cout << "Logout failed\n";
+                return false;
+            }
+
+            currentUser = NULL;
+            sessionActive = false;
+            std::cout << "Logout successful\n";
             return true;
         }
         bool isActive() {
-            return currentUser->isActive();
+            return sessionActive;
         }
         bool createUser() {
             std::string username;
@@ -52,31 +52,31 @@ class Session {
 			std::cin >> input;
 			privilege = static_cast<Privilege>(input);
 
-            if(!userManager.createUser(username, password, privilege)) {
-                std::cout << "An error occured while trying to create new user\n";
+            // logic check for username and password to see if they're valid
+
+            if(!userManager.addUser(username, password, privilege)) {
+                std::cout << "Creating new user failed\n";
                 return false;
             } 
 
-            std::cout << "New user has been created\n";
+            std::cout << "Creating new user successful\n";
             // save to daily transaction file
             return true;
         }
         bool deleteUser() {
             if(currentUser->getAccountPrivilege() != ADMIN) {
                 std::cout << "Cannot delete user, inproper account privilege\n";
+                return false;
             }
 
             std::string username;
             std::cout << "Enter username of user to be deleted: ";
             std::cin >> username;
 
-            if(currentUser->getUsername() == username) {
-                std::cout << "Cannot delete current account being used\n";
-                return false;
-            }
+             // logic check for username to see if they're valid
 
-            if(!userManager.deleteUser(username)) {
-                std::cout << "An error has occured trying to deleted user\n";
+            if(!userManager.removeUser(currentUser->getUsername(), username)) {
+                std::cout << "Delete user failed\n";
                 return false;
             }
 
@@ -89,6 +89,7 @@ class Session {
                 std::cout << "Cannot sell, inproper account privilege\n";
                 return false;
             }
+
             if(sessionSellLimited) {
                 std::cout << "Cannot sell game, start a new session and try again\n";
                 return false;
@@ -101,14 +102,17 @@ class Session {
             std::cout << "Enter price of game: ";
             std::cin >> gamePrice;
 
+            // validation logic goes here for game name and price
             if(gamePrice >= 999.99 || gamePrice < 0.0) {
                 std::cout << "Inproper game price\n";
                 return false;
             }
-            if(!gameManager.createGame(gameName, gamePrice, currentUser->getUsername())) {
+
+            if(!gameManager.addGame(gameName, currentUser->getUsername(), gamePrice)) {
                 std::cout << "An error has occured trying to create game listing\n";
                 return false;
             }
+
             std::cout << "You game has been listed\n";
             sessionSellLimited = true;
             // save to daily transaction file
@@ -126,23 +130,20 @@ class Session {
             std::cin >> gameName;
             std::cout << "Enter name of seller: ";
             std::cin >> gameSeller;
-            std::optional<Game> game = gameManager.getGame(gameName, gameSeller);
 
+            // logic to validate game name and seller name
+
+            Game* game = gameManager.getGame(gameName, gameSeller);
             if(!game) {
-                std::cout << "Could not find game\n";
+                std::cout << "Purchese transaction failed\n";
                 return false;
             }
 
-            if(currentUser->getBalance() < game->getGamePrice()) {
-                std::cout << "Invalid balance to buy game\n";
+            if(!paymentProcessor.purcheseGame(currentUser, game)){
+                std::cout << "Failed to buy game\n";
                 return false;
             }
-
-            if(currentUser->hasGame(game.value())) { // change this later
-                std::cout << "Current account already has game\n";
-                return false;
-            }
-
+        
             std::cout << "You have bought the game: " << gameName << "\n";
             // save to daily transaction file
             return true;
@@ -163,8 +164,10 @@ class Session {
             std::cout << "Enter amount being refunded: ";
             std::cin >> refundAmount;
 
-            std::optional<User> buyer = userManager.getUser(buyersName);
-            std::optional<Game> game = gameManager.getGame(gameName, currentUser->getUsername());
+            // validation logic for buyers name, game name, and refund amount
+
+            User* buyer = userManager.getUser(buyersName);
+            Game* game = gameManager.getGame(gameName, currentUser->getUsername());
             
             if(!buyer) {
                 std::cout << "Could not find buyer's account for refund transaction\n";
@@ -175,19 +178,13 @@ class Session {
                 std::cout << "Could not find game being sold by seller\n";
                 return false;
             }
-            
-            if(!buyer->hasGame(game.value())) {
-                std::cout << "Could not refund game, buyer doesn't have the game\n";
+
+            // handles rest of the logic in transaction processor
+            if(!paymentProcessor.refundGame(buyer, currentUser, game, refundAmount)){
+                std::cout << "Refund transaction failed\n";
                 return false;
             }
 
-            if(currentUser->getBalance() < refundAmount) {
-                std::cout << "Could not refund game, seller doesn't have the balance  for the refund\n";
-                return false;
-            }
-
-            buyer->setBalance(refundAmount);
-            currentUser->setBalance(-refundAmount);
             // save to daily transaction file
             return true;
         }
@@ -200,9 +197,11 @@ class Session {
                 std::cout << "Enter amount being added: ";
                 std::cin >> addedAmount;
 
-                std::optional<User> buyer = userManager.getUser(targetName);
+                // validation logic for target name and amount
 
-                if(!buyer) {
+                User* targetAccount = userManager.getUser(targetName);
+
+                if(!targetAccount) {
                     std::cout << "Targeted account credit is being added too could not  be found\n";
                     return false;
                 }
@@ -213,31 +212,39 @@ class Session {
                 }
 
                 sessionAddedCreditLimit += addedAmount;
-                buyer->setBalance(addedAmount);
+                if(!paymentProcessor.addCredit(targetAccount, addedAmount)) {
+                    return false;
+                }
 
             } else {
                 float addedAmount;
                 std::cout << "Enter amount being added: ";
                 std::cin >> addedAmount;
 
+                // validation logic for the amount
+
                 if((sessionAddedCreditLimit + addedAmount) > 1000.00) {
                     return false;
                 }
 
                 sessionAddedCreditLimit += addedAmount;
-                currentUser->setBalance(addedAmount);
+                if(!paymentProcessor.addCredit(currentUser, addedAmount)) {
+                    return false;
+                }
             }
 
-            // save to daily transaction file
             std::cout << "Credit has been added to account\n";
+            // save to daily transaction file
             return true;
         }
 
     private:
         UserManager userManager;  
         GameManager gameManager;
+        PaymentProcessor paymentProcessor;
 
-        std::optional<User> currentUser;    
+        User* currentUser;   
+        bool sessionActive = false;
         bool sessionSellLimited = false;
         float sessionAddedCreditLimit = 0;
 
