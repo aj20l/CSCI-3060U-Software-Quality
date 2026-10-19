@@ -6,7 +6,7 @@
 
 class UserManager {
     public:
-        UserManager() = default;
+        UserManager();
 
         User* authenticateLogin(std::string username, std::string password);
         bool authenticateLogout(User* user);
