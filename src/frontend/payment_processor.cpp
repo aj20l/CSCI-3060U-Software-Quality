@@ -27,6 +27,13 @@ bool PaymentProcessor::refundGame(User* buyer, User* seller, Game* game, float r
         std::cout << "Could not refund game, seller doesn't have the balance  for the refund\n";
         return false;
     }
+
+    buyer->removeGame(game);
+    float newBalanceBuyer = buyer->getBalance() + refundAmount;
+    buyer->setBalance(newBalanceBuyer);
+    float newBalanceSeller = seller->getBalance() - refundAmount;
+    seller->setBalance(newBalanceSeller);
+    return true;
 }
 
 bool PaymentProcessor::addCredit(User* user, float addAmount) {

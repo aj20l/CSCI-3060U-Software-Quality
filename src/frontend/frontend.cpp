@@ -16,7 +16,7 @@ void FrontEnd::Interface() {
         std::cout << "0. Exit\n";
         std::cout << "Enter choice: ";
 
-    std::cin >> choice;
+        std::cin >> choice;
 
         switch (choice) {
         case 1:
@@ -37,5 +37,6 @@ void FrontEnd::Interface() {
         default:
             std::cout<<"---------------------------\n";
             std::cout << "Invalid choice. Try again.\n";
+        }
     }
 }

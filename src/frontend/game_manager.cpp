@@ -26,10 +26,6 @@ bool GameManager::removeGame(std::string gameName, std::string gameSeller) {
     return false;
 }
 
-std::vector<Game*> GameManager::getGames() {
-    return games;
-}
-
 Game* GameManager::getGame(std::string gameName, std::string gameSeller) {
     for(Game* game : games) {
         if(game->getName() == gameName && game->getSeller() == gameSeller) {
