@@ -1,4 +1,4 @@
-#include "user_manager.cpp"
+//#include "user_manager.cpp"
 #include "payment_processor.cpp"
 
 class Session {

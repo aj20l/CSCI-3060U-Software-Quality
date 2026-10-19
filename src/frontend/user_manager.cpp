@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "game_manager.cpp"
 #include "user.cpp"
 
 class UserManager {

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "user.cpp"
-#include "game.cpp"
+//#include "user_manager.cpp"
+#include "game_manager.cpp"
 
 class PaymentProcessor {
     public:

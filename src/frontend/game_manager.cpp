@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
-#include "game.cpp"
+//#include "game.cpp"
+#include "user_manager.cpp"
 
 class GameManager {
     public:

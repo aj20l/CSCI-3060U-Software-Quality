@@ -33,27 +33,37 @@ void FrontEnd::Interface(){
 	int choice;
 
 do {
-    cout << "\n===== STORE OPTIONS =====\n";
-    cout << "1. Login\n";
-    cout << "2. Create Account\n";
 
-    cout << "Enter choice: ";
+    std::cout << "\n===== STORE OPTIONS =====\n";
+    std::cout << "1. Login\n";
+    std::cout << "2. Create Account\n";
+    std::cout << "3. View Games\n";
+    
+    std::cout << "Enter choice: ";
 
-    cin >> choice;
+    std::cin >> choice;
 
     switch (choice) {
         case 1:
+            std::cout<<"---------------------------\n";
             if(!currentSession.login()) {
+
                 return;
             }
             break;
 
         case 2:
-            cout << "Account Creation will be added later\n";
+            std::cout<<"---------------------------\n";
+            std::cout << "Account Creation will be added later\n";
+            break;
+        case 3:
+            std::cout<<"---------------------------\n";
+            std::cout << "Games viewing will be added later\n";
             break;
 
         default:
-            cout << "Invalid choice. Try again.\n";
+            std::cout<<"---------------------------\n";
+            std::cout << "Invalid choice. Try again.\n";
     }
 
 } while (choice != 0);
