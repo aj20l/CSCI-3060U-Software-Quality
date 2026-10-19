@@ -1,64 +1,37 @@
 #include <iostream>
-#include "session.cpp"
+#include <string>
+#include "frontend.h"
 
-
-
-
-
-class FrontEnd {
-    public:
-        FrontEnd() = default;
-		void Interface();
-        void startSession() {
-        	Interface();
-//            if(!currentSession.login()) {
-//                return;
-//            }
-            while(currentSession.isActive()) {
-                std::string transaction;
-                std::cout << "Enter transaction: ";
-                std::cin >> transaction;
-            }
-        }
-        void endSession() {
-
-        }
-
-    private:
-        Session currentSession;  
-
-};
-
-void FrontEnd::Interface(){
-	int choice;
-
-do {
-    cout << "\n===== STORE OPTIONS =====\n";
-    cout << "1. Login\n";
-    cout << "2. Create Account\n";
-
-    cout << "Enter choice: ";
-
-    cin >> choice;
-
-    switch (choice) {
-        case 1:
-            if(!currentSession.login()) {
-                return;
-            }
-            break;
-
-        case 2:
-            cout << "Account Creation will be added later\n";
-            break;
-
-        default:
-            cout << "Invalid choice. Try again.\n";
-    }
-
-} while (choice != 0);
-	
-	
-	
+void FrontEnd::startSession() {
+    Interface();
 }
 
+void FrontEnd::Interface() {
+    int choice = -1;
+
+    while (choice != 0) {
+        std::cout << "\n===== STORE OPTIONS =====\n";
+        std::cout << "1. Login\n";
+        std::cout << "2. Create Account\n";
+        std::cout << "0. Exit\n";
+        std::cout << "Enter choice: ";
+
+        if (!(std::cin >> choice)) {
+            return;
+        }
+
+        switch (choice) {
+        case 1:
+            currentSession.login();
+            break;
+        case 2:
+            std::cout << "Account creation will be added later\n";
+            break;
+        case 0:
+            endSession();
+            break;
+        default:
+            std::cout << "Invalid choice. Try again.\n";
+        }
+    }
+}

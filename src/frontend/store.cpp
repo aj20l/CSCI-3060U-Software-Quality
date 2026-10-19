@@ -1,8 +1,8 @@
 #include <iostream>
-#include "frontend.cpp"
+#include "frontend.h"
 
-int main(){
-    FrontEnd front = FrontEnd();
+int main() {
+    FrontEnd front;
     front.startSession();
     return 0;
 }
