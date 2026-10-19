@@ -1,7 +1,0 @@
-Login - transaction call
-username: “Admin”
-
-Delete user transaction - transaction call
-delete: “user-that-does-exist”
-
-Print daily transaction - transaction call

@@ -1,5 +1,0 @@
-Login - transaction call
-username: “sell-standard-user”
-
-Buy transaction - transaction call
-buyer: “sell-standard-user”

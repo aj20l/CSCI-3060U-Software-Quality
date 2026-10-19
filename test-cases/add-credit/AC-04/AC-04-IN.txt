@@ -1,5 +1,0 @@
-Login - transaction call
-username: “Richard Roe”
-
-Add credit - transaction call
-Logout - transaction call
