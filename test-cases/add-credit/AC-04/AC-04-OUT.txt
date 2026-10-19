@@ -1,0 +1,13 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Add credit transaction initialized
+“Account does not have proper privileges to add credits”
+Add credit transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+transactionUser: “Richard Roe”
+transactionMode: “sell-standard”
+message: “transaction rejected, user doesn’t have proper privileges to add credits”
+status: “rejected”

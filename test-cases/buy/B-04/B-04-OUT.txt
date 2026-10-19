@@ -1,0 +1,11 @@
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+Rejected: user doesn’t have enough funds for game
+Buy transaction rejected
+
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+Game bought!
+Buy transaction accepted

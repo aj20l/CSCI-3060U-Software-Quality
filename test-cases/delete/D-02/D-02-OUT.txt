@@ -1,0 +1,20 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+Rejected: Name belongs to current user
+Delete transaction rejected 
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+Rejected: No user with that name
+Delete transaction rejected 
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+<user> deleted
+Delete transaction accepted
