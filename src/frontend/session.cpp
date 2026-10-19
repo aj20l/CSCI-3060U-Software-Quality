@@ -245,3 +245,17 @@ bool Session::addCredit() { // will optimize this method later, got lazy
     // save to daily transaction file
     return true;
 }
+
+bool Session::listActiveAccounts() {
+    if(currentUser->getAccountPrivilege() != ADMIN) {
+        std::cout << "Cannot refund game, inproper account privilege\n";
+        return false;
+    }
+    std::cout << "All active accounts\n";
+    for(User* user : userManager.getUserList()) {
+        if(user->getActivity() == true) {
+            std::cout << user->getUsername();
+        }
+    }
+    return true;
+}

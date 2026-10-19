@@ -13,6 +13,7 @@ class UserManager {
         bool addUser(std::string username, std::string password, Privilege privilege);
         bool removeUser(std::string username, std::string targetUsername);
         User* getUser(std::string username);
+        std::vector<User*> getUserList() { return users; }
 
     private:
         std::vector<User*> users;

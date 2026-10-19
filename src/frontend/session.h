@@ -15,6 +15,7 @@ public:
     bool buy();
     bool refund();
     bool addCredit();
+    bool listActiveAccounts();
 
 private:
     UserManager userManager;
