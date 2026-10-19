@@ -16,22 +16,26 @@ void FrontEnd::Interface() {
         std::cout << "0. Exit\n";
         std::cout << "Enter choice: ";
 
-        if (!(std::cin >> choice)) {
-            return;
-        }
+    std::cin >> choice;
 
         switch (choice) {
         case 1:
-            currentSession.login();
+            std::cout<<"---------------------------\n";
+            if(!currentSession.login()) {
+
+                return;
+            }
             break;
         case 2:
-            std::cout << "Account creation will be added later\n";
+            std::cout<<"---------------------------\n";
+            std::cout << "Account Creation will be added later\n";
             break;
-        case 0:
-            endSession();
+        case 3:
+            std::cout<<"---------------------------\n";
+            std::cout << "Games viewing will be added later\n";
             break;
         default:
+            std::cout<<"---------------------------\n";
             std::cout << "Invalid choice. Try again.\n";
-        }
     }
 }
