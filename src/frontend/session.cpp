@@ -11,7 +11,7 @@ bool Session::login() {
     // valdation logic for inputs go here
 
     currentUser = userManager.authenticateLogin(username, password);
-    if(currentUser) {
+    if(!currentUser) {
         std::cout << "Login failed\n";
         return false;
     }
@@ -243,5 +243,19 @@ bool Session::addCredit() { // will optimize this method later, got lazy
 
     std::cout << "Credit has been added to account\n";
     // save to daily transaction file
+    return true;
+}
+
+bool Session::listActiveAccounts() {
+    if(currentUser->getAccountPrivilege() != ADMIN) {
+        std::cout << "Cannot refund game, inproper account privilege\n";
+        return false;
+    }
+    std::cout << "All active accounts\n";
+    for(User* user : userManager.getUserList()) {
+        if(user->getActivity() == true) {
+            std::cout << user->getUsername();
+        }
+    }
     return true;
 }
