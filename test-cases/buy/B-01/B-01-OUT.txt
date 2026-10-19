@@ -1,0 +1,7 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Buy transaction initialized 
+Error: User is not allowed to buy games
+Buy transaction rejected

@@ -1,0 +1,11 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+<user> deleted
+Delete transaction accepted
+
+“Enter transaction”
+<daily transaction file>

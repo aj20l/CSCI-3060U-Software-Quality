@@ -1,0 +1,10 @@
+Login - transaction call
+username: “Not Admin”
+
+Delete game transaction - transaction call
+
+Login - transaction call
+username: “Admin”
+
+Delete game transaction - transaction call
+delete: “game-to-be-deleted”

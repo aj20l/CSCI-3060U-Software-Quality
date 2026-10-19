@@ -1,0 +1,8 @@
+Login - transaction call
+username: “Richard Roe”
+
+Buy transaction - transaction call
+buy-game: “Already owned game”
+
+Buy transaction - transaction call
+buy-game: “Not owned game”

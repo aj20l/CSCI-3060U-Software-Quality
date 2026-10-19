@@ -1,0 +1,19 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Add credit transaction initialized
+“Enter amount”
+Amount accepted
+Add credit transaction accepted
+Add credit transaction logged
+“Added $100.00 credits to balance of Jane Roe”
+“Enter transaction”
+Logout transaction accepted
+
+transactionUser: “John Roe”
+transactionMode: “buy-standard”
+transactionAmount: 100.00
+currentBalance: 100.00
+sessionTotal: 100.00
+message: “added 100.00 credits to user Jane Roe”
+status: “accepted”

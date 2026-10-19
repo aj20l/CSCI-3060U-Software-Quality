@@ -1,0 +1,11 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Buy transaction initialized
+“Select game to buy’’
+Game bought!
+Buy transaction accepted
+
+“Enter transaction”
+<daily transaction file>

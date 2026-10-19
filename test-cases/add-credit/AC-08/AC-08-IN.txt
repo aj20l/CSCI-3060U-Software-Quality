@@ -1,0 +1,8 @@
+Login - transaction call
+username: “Jane Doe”
+
+Add credit - transaction call
+username: “John Doe”
+amount: 100.00
+
+Logout - transaction call
