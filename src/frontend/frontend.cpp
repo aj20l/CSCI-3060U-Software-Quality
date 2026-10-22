@@ -4,6 +4,9 @@
 
 void FrontEnd::startSession() {
     loginInterface();
+    while(currentSession.isActive()){
+        storeInterface();
+    }
 }
 
 void FrontEnd::loginInterface() {
@@ -21,7 +24,7 @@ void FrontEnd::loginInterface() {
         case 1:
             std::cout<<"---------------------------\n";
             if(currentSession.login()) {
-                storeInterface();
+                return;
             }
             break;
         case 2:
@@ -55,6 +58,7 @@ void FrontEnd::storeInterface() {
         std::cout << "5. Buy\n";
         std::cout << "6. Refund\n";
         std::cout << "7. Add Credit\n";
+        std::cout << "8. List Active Users\n";
         std::cout << "Enter choice: ";
 
         std::cin >> choice;
@@ -111,6 +115,14 @@ void FrontEnd::storeInterface() {
             std::cout<<"---------------------------\n";
             std::cout << "";
             if(currentSession.addCredit()) {
+
+                return;
+            }
+            break;
+        case 8:
+            std::cout<<"---------------------------\n";
+            std::cout << "";
+            if(currentSession.listActiveAccounts()) {
 
                 return;
             }
