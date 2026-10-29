@@ -225,7 +225,7 @@ bool Session::addCredit() { // will optimize this method later, got lazy
         if(!paymentProcessor.addCredit(targetAccount, addedAmount)) {
             return false;
         }
-
+        userManager.appendUserFile(targetAccount);
     } else {
         float addedAmount;
         std::cout << "Enter amount being added: ";
@@ -241,6 +241,7 @@ bool Session::addCredit() { // will optimize this method later, got lazy
         if(!paymentProcessor.addCredit(currentUser, addedAmount)) {
             return false;
         }
+        userManager.appendUserFile(currentUser);
     }
 
     std::cout << "Credit has been added to account\n";
