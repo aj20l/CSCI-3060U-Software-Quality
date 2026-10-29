@@ -3,19 +3,15 @@
 #include <vector>
 #include <algorithm>
 #include "game.h"
-
-enum Privilege {
-    ADMIN,
-    FULLSTANDARD,
-    BUYSTANDARD,
-    SELLSTANDARD
-};
+#include "utils.h"
+#include <iostream>
 
 class User {
     public:
-        User() = default;
-		User(std::string username, std::string password, Privilege privilege);
-		
+		User(int uid, std::string username, std::string password, Privilege privilege);
+        User(int uid, std::string username, std::string password, Privilege privilege, float balance, std::vector<Game*> gamesList);
+
+        int getUID() const { return UID_; }
         std::string getUsername() const { return username_; }
         std::string getPassword() const { return password_; }
         float getBalance() const { return balance_; }
@@ -25,12 +21,19 @@ class User {
         void setUserActive(bool active) { isActive_ = active; }
         
         std::vector<Game*> getGamesList() const { return gamesList_; }
+        std::vector<int> getGameListID() {
+            std::vector<int> ids;
+            for(Game* game: gamesList_) {
+                ids.push_back(game->getGID());
+            }
+            return ids;
+        }
         bool hasGame(std::string gameName, std::string sellersName);
         void appendGame(Game* game);
         void removeGame(Game* game);
 
     private:
-        std::string UID_;
+        int UID_;
         std::string username_;
         std::string password_;
         Privilege privilege_;

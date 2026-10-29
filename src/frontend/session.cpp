@@ -149,7 +149,8 @@ bool Session::buy() {
         std::cout << "Failed to buy game\n";
         return false;
     }
-
+    
+    userManager.appendUserFile(currentUser);
     std::cout << "You have bought the game: " << gameName << "\n";
     // save to daily transaction file
     return true;
@@ -192,6 +193,7 @@ bool Session::refund() {
         return false;
     }
 
+    userManager.appendUserFile(currentUser);
     // save to daily transaction file
     return true;
 }

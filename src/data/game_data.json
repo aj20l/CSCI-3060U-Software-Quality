@@ -1,0 +1,20 @@
+{
+    "games": [
+        {
+            "GID": 1,
+            "gameName": "Terraria",
+            "gameSeller": "ReLogic",
+            "price": 49.99
+        }, {
+            "GID": 2,
+            "gameName": "Minecraft",
+            "gameSeller": "Mojang",
+            "price": 49.99
+        }, {
+            "GID": 3,
+            "gameName": "GTA5",
+            "gameSeller": "RockStar",
+            "price": 49.99
+        }
+    ]
+}
