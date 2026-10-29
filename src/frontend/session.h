@@ -4,7 +4,7 @@
 
 class Session {
 public:
-    Session() = default;
+    Session() : userManager(&gameManager) {};
 
     bool login();
     bool logout();
@@ -18,8 +18,8 @@ public:
     bool listActiveAccounts();
 
 private:
-    UserManager userManager;
     GameManager gameManager;
+    UserManager userManager;
     PaymentProcessor paymentProcessor;
 
     User* currentUser = nullptr;

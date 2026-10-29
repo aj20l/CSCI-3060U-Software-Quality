@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "UID": 1,
+            "balance": 200.00999450683594,
+            "games": [
+                1,
+                2,
+                3
+            ],
+            "password": "password",
+            "privilege": 0,
+            "username": "JaneDoe"
+        },
+        {
+            "UID": 2,
+            "balance": 50.0,
+            "games": [
+                1
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "JohnDoe"
+        },
+        {
+            "UID": 3,
+            "balance": 120.75,
+            "games": [
+                3
+            ],
+            "password": "password",
+            "privilege": 2,
+            "username": "JaneRoe"
+        },
+        {
+            "UID": 4,
+            "balance": 250.0,
+            "games": null,
+            "password": "password",
+            "privilege": 3,
+            "username": "RichardRoe"
+        }
+    ]
+}

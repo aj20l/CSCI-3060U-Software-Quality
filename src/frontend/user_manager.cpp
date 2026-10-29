@@ -1,7 +1,10 @@
 #include "user_manager.h"
 
-UserManager::UserManager() {
-    users.push_back(new User("test", "test", ADMIN));
+UserManager::UserManager(GameManager* gameManager) : gameManager_(gameManager) {
+    loadUsersFile();
+    for(Game* game : gameManager->getGames()) {
+        std::cout << game->getName() << "\n";
+    }
 }
 
 User* UserManager::authenticateLogin(std::string username, std::string password) {
@@ -41,8 +44,13 @@ bool UserManager::addUser(std::string username, std::string password, Privilege 
         return false;
     }
 
-    User* newUser = new User(username, password, privilege);
+    std::ifstream f(dataPath_);
+    json data = json::parse(f);
+    int uid = int(data["users"].back()["UID"]) + 1;
+    f.close();
+    User* newUser = new User(uid, username, password, privilege);
     users.push_back(newUser);
+    appendUserFile(newUser);
     return true;
 }
 
@@ -58,6 +66,7 @@ bool UserManager::removeUser(std::string username, std::string targetUsername) {
         return false;
     }
     
+    popUserFile(user);
     for (auto it = users.begin(); it != users.end(); ++it) {
         if (*it == user) {
             delete *it;
@@ -76,4 +85,78 @@ User* UserManager::getUser(std::string username) {
         }
     }
     return nullptr;
+}
+
+void UserManager::loadUsersFile() {
+    std::ifstream f(dataPath_);
+    json data = json::parse(f);
+    
+    for(int i = 0; i < data["users"].size(); i++) {
+        std::vector<Game*> gamesList; 
+        if(!data["users"][i]["games"].is_null()) {
+            for(int gid : data["users"][i]["games"].get<std::vector<int>>()) {
+                Game* game = gameManager_->getGame(gid);
+                if(game) {
+                    gamesList.push_back(game);
+                }
+            } 
+        }
+
+        users.push_back(new User(data["users"][i]["UID"],
+                                    data["users"][i]["username"], 
+                                    data["users"][i]["password"], 
+                                    data["users"][i]["privilege"],
+                                    data["users"][i]["balance"],
+                                    gamesList));
+    }
+    f.close();
+}
+
+void UserManager::popUserFile(User* user) {
+    std::ifstream f(dataPath_);
+    json data = json::parse(f);
+    for(int i = 0; i < data["users"].size(); i++) {
+        if(data["users"][i]["UID"] == user->getUID()) {
+            data["users"].erase(i);
+            break;
+        }
+    }
+
+    std::ofstream o(dataPath_);
+    o << data.dump(4);
+    f.close();
+    o.close();
+}
+
+void UserManager::appendUserFile(User* user) {
+    std::vector<int> gid = user->getGameListID();
+
+    json newData = {
+        {"UID", user->getUID()},
+        {"username", user->getUsername()},
+        {"password", user->getPassword()},
+        {"privilege", user->getAccountPrivilege()},
+        {"balance", user->getBalance()},
+        {"games", gid}
+    };
+
+    bool exists = false;
+    std::ifstream f(dataPath_);
+    json data = json::parse(f);
+    for(int i = 0; i < data["users"].size(); i++) {
+        if(data["users"][i]["UID"] == user->getUID()) {
+            data["users"][i] = newData;
+            exists = true;
+            break;
+        }
+    }
+
+    if(!exists) {
+        data["users"].push_back(newData);
+    }
+
+    std::ofstream o(dataPath_);
+    o << data.dump(4);
+    f.close();
+    o.close();
 }
