@@ -3,18 +3,32 @@
         {
             "GID": 1,
             "gameName": "Terraria",
-            "gameSeller": "ReLogic",
+            "gameSeller": "JaneDoe",
             "price": 49.99
-        }, {
+        },
+        {
             "GID": 2,
             "gameName": "Minecraft",
-            "gameSeller": "Mojang",
+            "gameSeller": "JohnDoe",
             "price": 49.99
-        }, {
+        },
+        {
             "GID": 3,
             "gameName": "GTA5",
-            "gameSeller": "RockStar",
+            "gameSeller": "RichardRoe",
             "price": 49.99
+        },
+        {
+            "GID": 4,
+            "gameName": "Peak",
+            "gameSeller": "JaneDoe",
+            "price": 29.989999771118164
+        },
+        {
+            "GID": 5,
+            "gameName": "Minecraft",
+            "gameSeller": "JaneDoe",
+            "price": 0.0
         }
     ]
 }
