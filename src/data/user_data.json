@@ -16,7 +16,8 @@
             "UID": 2,
             "balance": 50.0,
             "games": [
-                1
+                1,
+                4
             ],
             "password": "password",
             "privilege": 1,
@@ -39,6 +40,27 @@
             "password": "password",
             "privilege": 3,
             "username": "RichardRoe"
+        },
+        {
+            "UID": 5,
+            "balance": 999999,
+            "games": [
+                3, 
+                4
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "JohnRoe"
+        },
+        {
+            "UID": 5,
+            "balance": 10,
+            "games": [
+                3
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "RichardDoe"
         }
     ]
 }
