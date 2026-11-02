@@ -157,43 +157,69 @@ bool Session::buy() {
 }
 
 bool Session::refund() {
-    if(currentUser->getAccountPrivilege() != SELLSTANDARD) {
-        std::cout << "Cannot refund game, inproper account privilege\n";
+    if(currentUser->getAccountPrivilege() != ADMIN) {
+        std::cout << "Refund transaction rejected, invalid account privilege\n";
         return false;
     }
 
     std::string buyersName;
     std::string gameName;
+    std::string sellerName;
     float refundAmount;
     std::cout << "Enter name of buyer: ";
     std::cin >> buyersName;
     std::cout << "Enter name of game being refunded: ";
     std::cin >> gameName;
+    std::cout << "Enter sellers name of the game: ";
+    std::cin >> sellerName;
     std::cout << "Enter amount being refunded: ";
     std::cin >> refundAmount;
 
     // validation logic for buyers name, game name, and refund amount
 
     User* buyer = userManager.getUser(buyersName);
-    Game* game = gameManager.getGame(gameName, currentUser->getUsername());
-    
+    User* seller = userManager.getUser(sellerName);
+    if(buyer == seller) {
+        std::cout << "Refund transaction rejected, cannot refund self\n";
+        return false;
+    }
     if(!buyer) {
-        std::cout << "Could not find buyer's account for refund transaction\n";
+        std::cout << "Refund transaction rejected, could not find buyer's account\n";
+        return false;
+    } else if(buyer->getAccountPrivilege() == SELLSTANDARD) {
+        std::cout << "Refund transaction rejected, buyer's account privilege cannot buy games to refund\n";
         return false;
     }
 
+    if(!seller) {
+        std::cout << "Refund transaction rejected, could not find seller's account\n";
+        return false;
+    } else if(seller->getAccountPrivilege() == BUYSTANDARD) {
+        std::cout << "Refund transaction rejected, seller's account privilege cannot list games to refund\n";
+        return false;
+    }
+
+    Game* game = gameManager.getGame(gameName, sellerName);
+
     if(!game) {
-        std::cout << "Could not find game being sold by seller\n";
+        std::cout << "Refund transaction rejected, could not find game being sold by seller\n";
+        return false;
+    }
+    
+    if(refundAmount >= 999.99 || refundAmount < 0.0) {
+        std::cout << "Refund transaction rejected, invalid refund amount\n";
         return false;
     }
 
     // handles rest of the logic in transaction processor
-    if(!paymentProcessor.refundGame(buyer, currentUser, game, refundAmount)){
-        std::cout << "Refund transaction failed\n";
+    if(!paymentProcessor.refundGame(buyer, seller, game, refundAmount)){
+        std::cout << "Refund transaction rejected\n";
         return false;
     }
 
-    userManager.appendUserFile(currentUser);
+    userManager.appendUserFile(buyer);
+    userManager.appendUserFile(seller);
+    std::cout << "Refund transaction accepted, game has been refunded\n";
     // save to daily transaction file
     return true;
 }
