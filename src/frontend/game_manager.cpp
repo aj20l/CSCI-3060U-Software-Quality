@@ -8,7 +8,6 @@ GameManager::GameManager() {
 bool GameManager::addGame(std::string gameName, std::string gameSeller, float gamePrice) {
     Game* game = getGame(gameName, gameSeller);
     if(game) {
-        std::cout << "A game by the seller with the same name already exits\n";
         return false;
     }
 
@@ -41,7 +40,6 @@ Game* GameManager::getGame(std::string gameName, std::string gameSeller) {
             return game;
         }
     }
-    std::cout << "Could not find game\n";
     return NULL;
 }
 
