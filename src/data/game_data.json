@@ -17,6 +17,12 @@
             "gameName": "GTA5",
             "gameSeller": "RichardRoe",
             "price": 49.99
+        },
+        {
+            "GID": 4,
+            "gameName": "EldenRing",
+            "gameSeller": "RichardDoe",
+            "price": 49.99
         }
     ]
 }

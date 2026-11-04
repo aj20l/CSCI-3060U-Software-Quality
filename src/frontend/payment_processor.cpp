@@ -18,21 +18,25 @@ bool PaymentProcessor::purcheseGame(User* user, Game* game) {
 }
 
 bool PaymentProcessor::refundGame(User* buyer, User* seller, Game* game, float refundAmount) {
-    if(buyer->hasGame(game->getName(), game->getSeller())) {
-        std::cout << "Could not refund game, buyer doesn't have the game\n";
+    if(!buyer->hasGame(game->getName(), game->getSeller())) {
+        std::cout << "Buyer doesn't have the game\n";
         return false;
     }
 
-    if(seller->getBalance() < refundAmount) {
-        std::cout << "Could not refund game, seller doesn't have the balance  for the refund\n";
-        return false;
-    }
-
-    buyer->removeGame(game);
     float newBalanceBuyer = buyer->getBalance() + refundAmount;
-    buyer->setBalance(newBalanceBuyer);
     float newBalanceSeller = seller->getBalance() - refundAmount;
+
+    if(newBalanceBuyer > 999999) {
+        std::cout << "Buyer's balance limit surpasses\n";
+        return false;
+    }
+    if(newBalanceSeller < 0) {
+        std::cout << "Seller doesn't have the balance for the refund\n";
+        return false;
+    }
+    buyer->setBalance(newBalanceBuyer);
     seller->setBalance(newBalanceSeller);
+    buyer->removeGame(game);
     return true;
 }
 
