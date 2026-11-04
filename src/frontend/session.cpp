@@ -107,14 +107,19 @@ bool Session::sell() {
     std::cout << "Enter price of game: ";
     std::cin >> gamePrice;
 
-    // validation logic goes here for game name and price
+    if(gameName.length() > 25 || gameName.length() < 3) {
+        std::cout << "Invalid game name\n";
+        return false;
+    }
     if(gamePrice >= 999.99 || gamePrice < 0.0) {
-        std::cout << "Inproper game price\n";
+        std::cout << "Invalid game price\n";
         return false;
     }
 
     if(!gameManager.addGame(gameName, currentUser->getUsername(), gamePrice)) {
-        std::cout << "An error has occured trying to create game listing\n";
+        std::cout << "Sell transaction rejected, a game by the\\
+                      seller with the same name already exits\n";
+
         return false;
     }
 
