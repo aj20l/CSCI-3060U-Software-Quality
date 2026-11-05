@@ -9,6 +9,8 @@ void FrontEnd::startSession() {
     }
 }
 
+// Starts the login loop, requesting the user to login before
+// allowing a store front transaction
 void FrontEnd::loginInterface() {
     int choice = -1;
 
@@ -46,6 +48,7 @@ void FrontEnd::loginInterface() {
     }
 }
 
+// Starts the store loop
 void FrontEnd::storeInterface() {
     int choice = -1;
 
