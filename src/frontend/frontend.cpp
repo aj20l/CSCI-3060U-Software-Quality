@@ -13,13 +13,22 @@ void FrontEnd::loginInterface() {
     int choice = -1;
 
     while (choice != 0) {
+	while (true) {
         std::cout << "\n===== STORE OPTIONS =====\n";
         std::cout << "1. Login\n";
         std::cout << "0. Exit\n";
         std::cout << "Enter choice: ";
 
         std::cin >> choice;
+    if (!std::cin.fail()) {
+        break;
+    }
 
+    std::cout << "Invalid input. Please enter an integer.\n";
+
+    std::cin.clear(); 
+    std::cin.ignore(1, '\n');
+}
         switch (choice) {
         case 1:
             std::cout<<"---------------------------\n";
@@ -50,6 +59,8 @@ void FrontEnd::storeInterface() {
     int choice = -1;
 
     while (choice != 0) {
+
+	while (true) {
         std::cout << "\n===== STORE OPTIONS =====\n";
         std::cout << "1. Logout\n";
         std::cout << "2. Create\n";
@@ -62,7 +73,15 @@ void FrontEnd::storeInterface() {
         std::cout << "Enter choice: ";
 
         std::cin >> choice;
+    if (!std::cin.fail()) {
+        break;
+    }
 
+    std::cout << "Invalid input. Please enter an integer.\n";
+
+    std::cin.clear(); 
+    std::cin.ignore(1, '\n');
+}
         switch (choice) {
         case 1:
             std::cout<<"---------------------------\n";
