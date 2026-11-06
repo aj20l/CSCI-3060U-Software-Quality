@@ -1,0 +1,12 @@
+1
+username
+5
+gamename
+gameseller
+"true"
+
+Login - transaction call
+username: “Richard Roe”
+
+Buy transaction - transaction call
+buy-game: “seller game”
