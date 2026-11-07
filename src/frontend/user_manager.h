@@ -5,8 +5,8 @@
 #include <fstream>
 #include "json.hpp"
 #include "user.h"
-#include "utils.h"
 #include "game_manager.h"
+#include "utils.h"
 
 using nlohmann::json;
 

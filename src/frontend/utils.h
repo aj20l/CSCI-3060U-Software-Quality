@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
 
+namespace Mode{
+    inline bool testMode = false;
+}
+
 enum Privilege {
     ADMIN,
     FULLSTANDARD,

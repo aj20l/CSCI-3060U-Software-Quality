@@ -143,6 +143,7 @@ void UserManager::popUserFile(User* user) {
 // Appends user data file given a user, adding new user or editing
 // their information if they exist
 void UserManager::appendUserFile(User* user) {
+    if(Mode::testMode) { return; }
     std::vector<int> gid = user->getGameListID();
 
     json newData = {
