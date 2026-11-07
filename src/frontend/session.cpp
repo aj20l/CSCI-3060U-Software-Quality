@@ -318,6 +318,11 @@ bool Session::search() {
     std::cout << "Enter Query: ";
     std::cin >> query;
 
+    if(query.length() > 25 || query.length() < 3) {
+        std::cout << "Invalid search query\n";
+        return false;
+    }
+
     std::cout << "Games found:\n";
     for(Game* game : gameManager.getGames()) {
         if(game->getName().find(query) != std::string::npos) {
