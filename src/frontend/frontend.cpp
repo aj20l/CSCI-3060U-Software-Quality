@@ -73,6 +73,7 @@ void FrontEnd::storeInterface() {
         std::cout << "6. Refund\n";
         std::cout << "7. Add Credit\n";
         std::cout << "8. List Active Users\n";
+        std::cout << "9. Search game and users\n";
         std::cout << "Enter choice: ";
 
         std::cin >> choice;
@@ -145,6 +146,14 @@ void FrontEnd::storeInterface() {
             std::cout<<"---------------------------\n";
             std::cout << "";
             if(currentSession.listActiveAccounts()) {
+
+                return;
+            }
+            break;
+        case 9:
+            std::cout<<"---------------------------\n";
+            std::cout << "";
+            if(currentSession.search()) {
 
                 return;
             }
