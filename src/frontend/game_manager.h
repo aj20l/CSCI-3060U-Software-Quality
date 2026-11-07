@@ -3,6 +3,7 @@
 #include <fstream>
 #include "json.hpp"
 #include "game.h"
+#include "utils.h"
 
 using nlohmann::json;
 

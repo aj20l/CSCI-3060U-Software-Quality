@@ -80,6 +80,7 @@ void GameManager::loadGamesFile() {
 // Appends games data file given a game, adding a new game or
 // editing the data of an existing game
 void GameManager::appendGameFile(Game* game) {
+    if(Mode::testMode) { return; }
     json newData = {
         {"GID", game->getGID()},
         {"gameName", game->getName()},
