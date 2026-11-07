@@ -16,6 +16,7 @@ public:
     bool refund();
     bool addCredit();
     bool listActiveAccounts();
+    bool search();
 
 private:
     GameManager gameManager;

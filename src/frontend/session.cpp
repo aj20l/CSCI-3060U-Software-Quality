@@ -301,7 +301,7 @@ bool Session::addCredit() {
 // Starts the transaction process listing all active accounts
 bool Session::listActiveAccounts() {
     if(currentUser->getAccountPrivilege() != ADMIN) {
-        std::cout << "Cannot refund game, inproper account privilege\n";
+        std::cout << "Cannot list active accounts, inproper account privilege\n";
         return false;
     }
     std::cout << "All active accounts\n";
@@ -310,5 +310,34 @@ bool Session::listActiveAccounts() {
             std::cout << user->getUsername();
         }
     }
+    return true;
+}
+
+bool Session::search() {
+    std::string query = "";
+    std::cout << "Enter Query: ";
+    std::cin >> query;
+
+    if(query.length() > 25 || query.length() < 3) {
+        std::cout << "Invalid search query\n";
+        return false;
+    }
+
+    std::cout << "Games found:\n";
+    for(Game* game : gameManager.getGames()) {
+        if(game->getName().find(query) != std::string::npos) {
+            std::cout << game->getName() << "\n";
+        }
+    }
+
+    if(currentUser->getAccountPrivilege() == ADMIN) {
+        std::cout << "Users found:\n";
+        for(User* user : userManager.getUserList()) {
+            if(user->getUsername().find(query) != std::string::npos) {
+                std::cout << user->getUsername() << "\n";
+            }
+        }
+    }
+
     return true;
 }
