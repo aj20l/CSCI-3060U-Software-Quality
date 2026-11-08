@@ -4,8 +4,6 @@ UserManager::UserManager(GameManager* gameManager) : gameManager_(gameManager) {
     loadUsersFile();
 }
 
-// Authenticates login, mapping data to an existing user in the system
-// if they exists
 User* UserManager::authenticateLogin(std::string username, std::string password) {
     User* user = getUser(username);
     if (!user) {
@@ -27,7 +25,6 @@ User* UserManager::authenticateLogin(std::string username, std::string password)
     return user;
 }
 
-// Authenticates a user can logout only if that user is active
 bool UserManager::authenticateLogout(User* user) {
     if (!user || !user->getActivity()) {
         std::cout << "The current user doesn't have an active session\n";
@@ -37,7 +34,6 @@ bool UserManager::authenticateLogout(User* user) {
     return true;
 }
 
-// Adds a new user to the system and user data file
 bool UserManager::addUser(std::string username, std::string password, Privilege privilege) {
     User* user = getUser(username);
     if(user) {
@@ -45,22 +41,16 @@ bool UserManager::addUser(std::string username, std::string password, Privilege 
         return false;
     }
 
-    // Obtains the newest user in the system and increments their id
-    // for to be used by the current user being created
     std::ifstream f(dataPath_);
     json data = json::parse(f);
     int uid = int(data["users"].back()["UID"]) + 1;
     f.close();
     User* newUser = new User(uid, username, password, privilege);
-    
-    // Add the new user into the system before appending the user
-    // data file with the new user
     users.push_back(newUser);
     appendUserFile(newUser);
     return true;
 }
 
-// Removes user from system and user data file
 bool UserManager::removeUser(std::string username, std::string targetUsername) { 
     if(username == targetUsername) {
         std::cout << "Cannot delete current account being used\n";
@@ -72,9 +62,8 @@ bool UserManager::removeUser(std::string username, std::string targetUsername) {
         std::cout << "The user being deleted could not be found\n";
         return false;
     }
-
-    // Removes the targets user from the system before removing the
-    // targeted from the user data file
+    
+    popUserFile(user);
     for (auto it = users.begin(); it != users.end(); ++it) {
         if (*it == user) {
             delete *it;
@@ -82,12 +71,10 @@ bool UserManager::removeUser(std::string username, std::string targetUsername) {
             break;
         }
     }
-    popUserFile(user);
     std::cout << "User has been deleted\n";
     return true;
 }
 
-// Returns a user if they exists in the system
 User* UserManager::getUser(std::string username) {
     for(User* user : users) {
         if(user->getUsername() == username) {
@@ -97,7 +84,6 @@ User* UserManager::getUser(std::string username) {
     return nullptr;
 }
 
-// Loads users from user data file
 void UserManager::loadUsersFile() {
     std::ifstream f(dataPath_);
     json data = json::parse(f);
@@ -123,7 +109,6 @@ void UserManager::loadUsersFile() {
     f.close();
 }
 
-// Removes a given user from the user data file
 void UserManager::popUserFile(User* user) {
     std::ifstream f(dataPath_);
     json data = json::parse(f);
@@ -140,10 +125,7 @@ void UserManager::popUserFile(User* user) {
     o.close();
 }
 
-// Appends user data file given a user, adding new user or editing
-// their information if they exist
 void UserManager::appendUserFile(User* user) {
-    if(Mode::testMode) { return; }
     std::vector<int> gid = user->getGameListID();
 
     json newData = {

@@ -1,20 +1,39 @@
-“Login to account”
-Login accepted
-“Enter transaction”
-Add credit transaction initialized
-“Enter username to add credit too”
-Username accepted
-“Enter amount”
-Amount rejected
-Add credit transaction rejected
-“Enter transaction”
-Logout transaction accepted
 
-transactionUser: “Jane Doe”
-transactionMode: “admin”
-transactionTarget: “John Doe”
-transactionAmount: -100.00
-currentBalance: 0
-sessionTotal: 0
-message: “transaction rejected, invalid credit amount submitted”
-status: “rejected
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 7
+---------------------------
+Enter name of account credit is being added: JohnDoe
+Enter amount being added: -100.00
+Invalid credit amount specified
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

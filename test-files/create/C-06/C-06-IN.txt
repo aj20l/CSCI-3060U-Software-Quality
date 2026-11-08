@@ -1,9 +1,0 @@
-login
-"Jane Doe"
-"correctPassword"
-create
-Username:"NewUser"
-UserType:”buy-standard”
-credits:9999999
-
-

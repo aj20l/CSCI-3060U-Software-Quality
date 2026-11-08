@@ -1,5 +1,10 @@
-Login - transaction call
-username: “Richard Roe”
-
-Buy transaction - transaction call
-buy-game: “game”
+1
+JaneDoe
+password
+5
+Terraria
+ReLogic
+5
+Minecraft
+Mojang
+1

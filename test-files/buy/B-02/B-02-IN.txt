@@ -1,11 +1,13 @@
-Login - transaction call
-username: “Richard Roe”
-
-seller: “Wrong seller”
-buy-game: “Right game”
-
-Seller: “Right seller”
-buy-game: “Wrong game”
-
-seller: “Right seller”
-buy-game: “Right game”
+1
+JaneDoe
+password
+5
+Terraria
+NoLogic
+5
+NotTerraria
+ReLogic
+5
+Terraria
+ReLogic
+1

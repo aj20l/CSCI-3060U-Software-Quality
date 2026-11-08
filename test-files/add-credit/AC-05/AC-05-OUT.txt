@@ -1,15 +1,39 @@
-“Login to account”
-Login accepted
-“Enter transaction”
-Add credit transaction initialized
-“Enter username to add credit too”
-Username rejected
-Add credit transaction rejected
-“Enter transaction”
-Logout transaction accepted
 
-transactionUser: “Jane Doe”
-transactionMode: “admin”
-transactionTarget: “Not A User”
-message: “transaction rejected, targeted user does not exist”
-status: “rejected”
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 7
+---------------------------
+Enter name of account credit is being added: fakeuser
+Enter amount being added: 100
+Targeted account credit is being added too could not  be found
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

@@ -1,7 +1,8 @@
-login
-"Jane Doe"
-"correctPassword"
-create
-Username:"newUser"
-UserType:”admin”
-Write to daily Transaction
+1
+JaneDoe
+password
+2
+newuser
+password
+ADMIN
+1

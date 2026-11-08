@@ -1,16 +1,7 @@
-Login - transaction call
-username: “full-standard-user”
-
-Sell transaction - transaction call
-Game listing information: “full-standard-user’s-game”, 50 
-
-Buy transaction - transaction call
-buy-game: “full-standard-user’s-game”
-
-Logout - transaction call
-
-Login - transaction call
-username: “full-standard-user”
-
-Buy transaction - transaction call
-buy-game: “full-standard-user’s-game”
+1
+JaneDoe
+password
+4
+Pe
+29.99
+1

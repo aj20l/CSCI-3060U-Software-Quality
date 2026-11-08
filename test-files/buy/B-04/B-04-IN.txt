@@ -1,8 +1,9 @@
-Login - transaction call
-username: “Richard Roe”
+1
+JaneRoe
+password
+5
+expensiveGame
+expensiveSeller
+1
 
-Buy transaction - transaction call
-buy-game: “Really expensive game”
 
-Buy transaction - transaction call
-buy-game: “Very cheap game”

@@ -1,7 +1,8 @@
-login
-"Jane Doe"
-"correctPassword"
-create
-Username:"NewUser"
-UserType:”buy-standard”
-
+1
+JaneDoe
+password
+2
+newuser
+password
+2
+1

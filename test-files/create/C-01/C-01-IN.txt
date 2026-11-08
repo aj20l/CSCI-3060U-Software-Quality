@@ -1,6 +1,8 @@
-login
-"Jane Doe"
-"correctPassword"
-create
-Username:"thisNameIsTooLong"
-UserType:”standard”
+1
+JaneDoe
+password
+2
+thisNameIsTooLong
+password
+FULLSTANDARD
+1

@@ -1,0 +1,50 @@
+
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+Enter choice: 4
+---------------------------
+Enter name of game: Peak
+Enter price of game: 29.99
+You game has been listed
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+Enter choice: 4
+---------------------------
+Cannot sell game, start a new session and try again
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+Enter choice: 1
+---------------------------
+Logout successful

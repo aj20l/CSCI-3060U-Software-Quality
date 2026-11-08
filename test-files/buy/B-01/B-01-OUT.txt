@@ -1,7 +1,36 @@
-“Login to account”
-Login accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: RichardRoe
+Enter your password: password
+Login successful
 
-“Enter transaction”
-Buy transaction initialized 
-Error: User is not allowed to buy games
-Buy transaction rejected
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 5
+---------------------------
+Cannot buy game, inproper account privilege
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful
