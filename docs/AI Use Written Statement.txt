@@ -1,1 +1,5 @@
-We, Danyal Fahim, Gordon Law, and Ajani Waters promise that we did not use any generative AI in this project phase.
+We Danyal Fahim and Ajani Waters promise that we did not use any generative AI in this project phase.
+
+I Gordon Law used AI to implement the query search:
+Prompt: can i get the cpp implementation for a query search by name
+Output: https://chatgpt.com/s/t_6aef834292a08191b1cbeead73d6102b
