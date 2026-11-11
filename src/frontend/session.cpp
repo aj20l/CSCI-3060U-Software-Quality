@@ -291,9 +291,7 @@ bool Session::listActiveAccounts() {
     }
     std::cout << "All active accounts\n";
     for(User* user : userManager.getUserList()) {
-        if(user->getActivity() == true) {
-            std::cout << user->getUsername();
-        }
+        std::cout << user->getUsername();
     }
     return true;
 }
