@@ -10,7 +10,8 @@ if (Test-Path ".\build\main.exe") {
     exit 1
 }
 
-# Counters for tracking results
+# Configuration & Counters
+$TIMEOUT_MS = 200 # Max time (in milliseconds) allowed per test before assuming an infinite loop
 $PASSED = 0
 $FAILED = 0
 
@@ -36,7 +37,50 @@ foreach ($dir in $test_dirs) {
         $input_sanitized = $input_raw.Replace([char]0x201C, '"').Replace([char]0x201D, '"').Replace([char]0x2018, "'").Replace([char]0x2019, "'")
 
         # Test mode flag enabled
-        $input_sanitized | & $EXECUTABLE --test 2>&1 | Out-File -FilePath $actual_file -Encoding utf8
+        #$input_sanitized | & $EXECUTABLE --test 2>&1 | Out-File -FilePath $actual_file -Encoding utf8
+
+        Write-Host "Exit code: $LASTEXITCODE"
+
+        # Configure the process to run with a strict timeout
+        $psi = New-Object System.Diagnostics.ProcessStartInfo
+        $psi.FileName = (Resolve-Path $EXECUTABLE).Path
+        #$psi.Arguments = "--test"
+        $psi.RedirectStandardInput = $true
+        $psi.RedirectStandardOutput = $true
+        $psi.RedirectStandardError = $true
+        $psi.UseShellExecute = $false
+        $psi.CreateNoWindow = $true
+
+        $process = New-Object System.Diagnostics.Process
+        $process.StartInfo = $psi
+
+        # Start the C++ executable
+        $process.Start() | Out-Null
+
+        # Feed sanitized input into StandardInput and close the stream so the app knows input ended
+        $process.StandardInput.Write($input_sanitized)
+        $process.StandardInput.Close()
+
+        # Read output asynchronously to prevent buffer deadlocks during infinite loops
+        $stdoutTask = $process.StandardOutput.ReadToEndAsync()
+        $stderrTask = $process.StandardError.ReadToEndAsync()
+
+        # Wait up to $TIMEOUT_MS for the test to finish
+        $completed = $process.WaitForExit($TIMEOUT_MS)
+
+        if (-not $completed) {
+            # Infinite loop or hang detected: kill the process and skip to the next test
+            $process.Kill()
+            $process.Dispose()
+            Write-Host "Test $($test_name): FAILED (Timeout / Infinite Loop Detected after $($TIMEOUT_MS)ms)" -ForegroundColor Red
+            $FAILED++
+            continue
+        }
+
+        # Combine stdout and stderr and save to the actual file, matching original 2>&1 behavior
+        $combinedOutput = $stdoutTask.Result + $stderrTask.Result
+        $combinedOutput | Out-File -FilePath $actual_file -Encoding utf8
+        $process.Dispose()
 
         # Filter out constructor debugging prints
         $raw_actual = Get-Content $actual_file
@@ -73,8 +117,6 @@ foreach ($dir in $test_dirs) {
 
         $actual_content = $filtered_actual | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
             $line = $_
-
-            # For now I had to put in a bunch of manual fixes for the test cases, (buy, sell, create, etc)
 
             # Fix "Enter choice: ---------------------------" split behavior
             if ($line -like "*Enter choice: ---------------------------*") {
@@ -157,6 +199,7 @@ foreach ($dir in $test_dirs) {
                     $input_index += 3
                 }
             }
+
             # Split internal lines up again if we injected raw layout newlines (`n)
             $sub_lines = $line -split "`n"
 
@@ -189,7 +232,7 @@ foreach ($dir in $test_dirs) {
                 if ($_.SideIndicator -eq "<=") {
                     Write-Host "Expected: $($_.InputObject)" -ForegroundColor Yellow
                 } else {
-                    Write-Host "Actual:   $ $($_.InputObject)" -ForegroundColor Red
+                    Write-Host "Actual:   $($_.InputObject)" -ForegroundColor Red
                 }
             }
             Write-Host "----------------------------------------------------"
@@ -201,6 +244,9 @@ foreach ($dir in $test_dirs) {
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "Testing Complete: $PASSED Passed, $FAILED Failed." -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
+
+Write-Host "Executeable: $EXECUTABLE"
+Write-Host "Arguments: --test"
 
 if ($FAILED -gt 0) {
     exit 1
