@@ -17,9 +17,10 @@ Login successful
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 4
 ---------------------------
-Sell transaction rejected, invalid account privilege
+Cannot sell inproper account privilege
 
 ===== STORE OPTIONS =====
 1. Logout
@@ -30,6 +31,7 @@ Sell transaction rejected, invalid account privilege
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 1
 ---------------------------
 Logout successful

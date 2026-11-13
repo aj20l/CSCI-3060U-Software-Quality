@@ -3,7 +3,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: JaneDoe
+Enter your username: CanBuyGamesMan
 Enter your password: password
 Login successful
 
@@ -20,7 +20,7 @@ Login successful
 Enter choice: 5
 ---------------------------
 Enter name of game: Terraria
-Enter name of seller: ReLogic
+Enter name of seller: JaneDoe
 You have bought the game: Terraria
 
 ===== STORE OPTIONS =====
@@ -36,7 +36,7 @@ You have bought the game: Terraria
 Enter choice: 5
 ---------------------------
 Enter name of game: Minecraft
-Enter name of seller: Mojang
+Enter name of seller: JohnDoe
 You have bought the game: Minecraft
 
 ===== STORE OPTIONS =====

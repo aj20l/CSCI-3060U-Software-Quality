@@ -20,9 +20,9 @@ Login successful
 9. Search game and users
 Enter choice: 2
 ---------------------------
-Enter username of new user:
-Enter password of new user:
-Enter user privilege:
+Enter username of new user: newuser
+Enter password of new user: password
+Enter user privilege: 2
 Creating new user successful
 
 ===== STORE OPTIONS =====

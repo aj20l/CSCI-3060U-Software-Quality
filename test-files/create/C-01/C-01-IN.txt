@@ -4,5 +4,5 @@ password
 2
 thisNameIsTooLong
 password
-FULLSTANDARD
+1
 1

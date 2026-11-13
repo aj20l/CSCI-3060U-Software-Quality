@@ -1,7 +1,7 @@
 1
-username
+JaneDoe
 password
 5
-gamename
-gameseller
+EldenRing
+RichardDoe
 1

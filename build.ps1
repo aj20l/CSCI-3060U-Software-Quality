@@ -1,3 +1,9 @@
+# Ensure we always run relative to the script's own folder
+Set-Location $PSScriptRoot
+
+# Kill any lingering instance of main.exe so the linker isn't blocked
+Stop-Process -Name "main" -Force -ErrorAction SilentlyContinue
+
 $BUILD_DIR = "build"
 
 if (-not (Test-Path $BUILD_DIR)) {

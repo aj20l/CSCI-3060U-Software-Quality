@@ -1,10 +1,10 @@
 1
-JaneDoe
+CanBuyGamesMan
 password
 5
 Terraria
-ReLogic
+JaneDoe
 5
 Minecraft
-Mojang
+JohnDoe
 1

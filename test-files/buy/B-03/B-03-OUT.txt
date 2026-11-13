@@ -20,7 +20,7 @@ Login successful
 Enter choice: 5
 ---------------------------
 Enter name of game: GTA5
-Enter name of seller: RockStar
+Enter name of seller: RichardDoe
 Current account already has game
 Failed to buy game
 

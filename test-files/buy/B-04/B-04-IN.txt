@@ -1,5 +1,5 @@
 1
-JaneRoe
+JaneDoe
 password
 5
 expensiveGame

@@ -21,7 +21,7 @@ Login successful
 Enter choice: 5
 ---------------------------
 Enter name of game: Terraria
-Enter name of seller: ReLogic
+Enter name of seller: JaneDoe
 You have bought the game: Terraria
 
 ===== STORE OPTIONS =====

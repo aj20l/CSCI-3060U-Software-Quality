@@ -1,0 +1,9 @@
+1
+JaneDoe
+password
+6
+JohnDoe
+EldenRing
+BrokeMan
+49.99
+1

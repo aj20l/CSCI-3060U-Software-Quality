@@ -1,8 +1,9 @@
-Login - transaction call
-username: “Jane Roe”
-
-Refund transaction - transaction call
-buyer: “Jane Doe”
-seller: “Richard Roe”
-
-Logout - transaction call
+1
+JaneDoe
+password
+6
+JohnDoe
+Minecraft
+JaneRoe
+49.99
+1

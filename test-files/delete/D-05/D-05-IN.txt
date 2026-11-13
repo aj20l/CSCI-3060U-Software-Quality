@@ -1,8 +1,6 @@
-Login - transaction call
-username: “Admin”
-
-Delete user transaction - transaction call
-delete: “seller-user”
-
-Buy transaction - transaction call
-buy-game: “seller-user’s-game”
+1
+JaneDoe
+password
+3
+RichardDoe
+1

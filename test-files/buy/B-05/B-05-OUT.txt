@@ -3,7 +3,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: username
+Enter your username: JaneDoe
 Enter your password: password
 Login successful
 
@@ -19,9 +19,9 @@ Login successful
 9. Search game and users
 Enter choice: 5
 ---------------------------
-Enter name of game: gamename
-Enter name of seller: gameseller
-You have bought the game: gamename
+Enter name of game: EldenRing
+Enter name of seller: RichardDoe
+You have bought the game: EldenRing
 
 ===== STORE OPTIONS =====
 1. Logout

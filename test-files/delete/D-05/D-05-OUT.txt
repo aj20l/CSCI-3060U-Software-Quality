@@ -1,14 +1,38 @@
-“Login to account”
-Login accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
 
-“Enter transaction”
-Delete transaction initialized 
-“Enter name of user”
-<user> deleted
-Delete transaction accepted
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 3
+---------------------------
+Enter username of user to be deleted: RichardDoe
+User has been deleted
+The user RichardDoe has been deleted
 
-“Enter transaction”
-Buy transaction initialized
-“Enter name of game”
-Rejected: No game with that name
-Buy transaction rejected
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

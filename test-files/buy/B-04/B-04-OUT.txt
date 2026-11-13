@@ -3,7 +3,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: JaneRoe
+Enter your username: JaneDoe
 Enter your password: password
 Login successful
 

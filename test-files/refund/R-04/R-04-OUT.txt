@@ -1,15 +1,36 @@
-“Login to account”
-Login accepted
-“Enter transaction”
-Refund transaction initialized 
-“Enter the buyers username”
-Buyers username rejected
-Refund transaction rejected
-“Enter transaction”
-Logout transaction accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: RichardDoe
+Enter your password: password
+Login successful
 
-buyer: “Richard Roe”
-buyersPrivilege: “sell-standard”
-buyersBalance: 0
-message: “refund transaction rejected, the buyer account does not have privileges to refund game”
-status: “rejected”
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 6
+---------------------------
+Refund transaction rejected, invalid account privilege
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

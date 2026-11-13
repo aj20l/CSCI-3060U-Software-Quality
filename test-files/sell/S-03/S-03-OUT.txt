@@ -4,7 +4,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: RichardRoe
+Enter your username: RichardDoe
 Enter your password: password
 Login successful
 
@@ -17,11 +17,12 @@ Login successful
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 4
 ---------------------------
 Enter name of game: Peak
 Enter price of game: 29.99
-Sell transaction accepted, your game has been listed
+You game has been listed
 
 ===== STORE OPTIONS =====
 1. Logout
@@ -32,6 +33,7 @@ Sell transaction accepted, your game has been listed
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 1
 ---------------------------
 Logout successful

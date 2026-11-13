@@ -17,6 +17,7 @@ Login successful
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 4
 ---------------------------
 Enter name of game: Peak
@@ -32,6 +33,7 @@ You game has been listed
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 4
 ---------------------------
 Cannot sell game, start a new session and try again
@@ -45,6 +47,7 @@ Cannot sell game, start a new session and try again
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 1
 ---------------------------
 Logout successful

@@ -1,26 +1,40 @@
-“Login to account”
-Login accepted
-“Enter transaction”
-Refund transaction initialized 
-“Enter the buyers username”
-Buyers username accepted
-“Enter the sellers username”
-Sellers username accepted
-“Enter the amount being refunded”
-Refund amount accepted
-“Enter the game being refunded”
-Game name rejected
-Refund transaction rejected
-“Enter transaction”
-Logout transaction accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
 
-buyer: “John Doe”
-buyersPrivilege: “full-standard”
-buyersBalance: 0
-seller: “Richard Roe”
-sellersPrivilege: “sell-standard”
-sellersBalance: 100.00
-refundAmount: 100.00
-refundedGame: “Slay The Pire”
-message: “refund transaction rejected, Slay the Pire doesn’t exist as a game”
-status: “rejected”
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 6
+---------------------------
+Enter name of buyer: JohnDoe
+Enter name of game being refunded: Minecraft
+Enter sellers name of the game: JohnDoe
+Enter amount being refunded: 49.99
+Refund transaction rejected, cannot refund self
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

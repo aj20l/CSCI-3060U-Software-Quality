@@ -3,7 +3,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: JaneDoe
+Enter your username: JaneRoe
 Enter your password: password
 Login successful
 
@@ -36,7 +36,7 @@ Purchese transaction failed
 Enter choice: 5
 ---------------------------
 Enter name of game: NotTerraria
-Enter name of seller: ReLogic
+Enter name of seller: JaneDoe
 Purchese transaction failed
 
 ===== STORE OPTIONS =====
@@ -52,7 +52,7 @@ Purchese transaction failed
 Enter choice: 5
 ---------------------------
 Enter name of game: Terraria
-Enter name of seller: ReLogic
+Enter name of seller: JaneDoe
 You have bought the game: Terraria
 
 ===== STORE OPTIONS =====

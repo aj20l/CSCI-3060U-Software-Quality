@@ -6,8 +6,7 @@
             "games": [
                 1,
                 2,
-                3,
-                8
+                3
             ],
             "password": "password",
             "privilege": 0,
@@ -15,10 +14,11 @@
         },
         {
             "UID": 2,
-            "balance": 29450.0,
+            "balance": 47750.0,
             "games": [
                 1,
-                4
+                4,
+                5
             ],
             "password": "password",
             "privilege": 1,
@@ -26,12 +26,9 @@
         },
         {
             "UID": 3,
-            "balance": 570.798828125,
+            "balance": 6670.798828125,
             "games": [
-                3,
-                9,
-                8,
-                10
+                3
             ],
             "password": "password",
             "privilege": 2,
@@ -39,14 +36,6 @@
         },
         {
             "UID": 4,
-            "balance": 250.0,
-            "games": null,
-            "password": "password",
-            "privilege": 3,
-            "username": "RichardRoe"
-        },
-        {
-            "UID": 5,
             "balance": 999999,
             "games": [
                 3,
@@ -58,8 +47,9 @@
         },
         {
             "UID": 5,
-            "balance": 10,
+            "balance": 50,
             "games": [
+                2,
                 3
             ],
             "password": "password",
@@ -74,31 +64,37 @@
             ],
             "password": "password",
             "privilege": 1,
-            "username": "username"
+            "username": "BrokeMan"
         },
         {
             "UID": 7,
-            "balance": 0.0,
-            "games": [],
+            "balance": 50,
+            "games": [
+                2
+            ],
             "password": "password",
-            "privilege": 0,
-            "username": "thisNameIsTooLong"
+            "privilege": 3,
+            "username": "CantBuyGamesMan"
         },
         {
-            "UID": 8,
-            "balance": 0.0,
-            "games": [],
-            "password": "password",
-            "privilege": 0,
-            "username": "newuser"
+          "UID": 8,
+          "balance": 300,
+          "games": [
+            3
+          ],
+          "password": "password",
+          "privilege": 0,
+          "username": "CanBuyGamesMan"
         },
         {
-            "UID": 9,
-            "balance": 0.0,
-            "games": [],
-            "password": "password",
-            "privilege": 0,
-            "username": "username5"
+          "UID": 9,
+          "balance": 300,
+          "games": [
+            3
+          ],
+          "password": "password",
+          "privilege": 0,
+          "username": "expensiveSeller"
         }
     ]
 }

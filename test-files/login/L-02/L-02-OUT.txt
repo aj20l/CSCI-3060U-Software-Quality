@@ -1,1 +1,16 @@
-“Login failed user does not exist”
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: wronguser
+Enter your password: password
+Incorrect username
+Login failed
+
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 0
+---------------------------
+Exiting

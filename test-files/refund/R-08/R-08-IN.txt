@@ -1,8 +1,9 @@
-Login - transaction call
-username: “Jane Doe”
-
-Refund transaction - transaction call
-buyer: “Jane Doe”
-seller: “Jane Doe”
-
-Logout - transaction call
+1
+JaneDoe
+password
+6
+JaneRoe
+Deadlock
+RichardDoe
+49.99
+1

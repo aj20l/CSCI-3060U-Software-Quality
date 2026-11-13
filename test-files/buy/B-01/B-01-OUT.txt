@@ -3,7 +3,7 @@
 0. Exit
 Enter choice: 1
 ---------------------------
-Enter your username: RichardRoe
+Enter your username: CantBuyGamesMan
 Enter your password: password
 Login successful
 

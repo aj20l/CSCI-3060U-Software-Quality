@@ -1,0 +1,41 @@
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 6
+---------------------------
+Enter name of buyer: JohnDoe
+Enter name of game being refunded: EldenRing
+Enter sellers name of the game: BrokeMan
+Enter amount being refunded: 49.99
+Seller doesn't have the balance for the refund
+Refund transaction rejected
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

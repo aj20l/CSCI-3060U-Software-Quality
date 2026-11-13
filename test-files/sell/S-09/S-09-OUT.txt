@@ -17,6 +17,7 @@ Login successful
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 4
 ---------------------------
 Enter name of game: Terraria
@@ -32,6 +33,7 @@ Sell transaction rejected, a game by the seller with the same name already exits
 6. Refund
 7. Add Credit
 8. List Active Users
+9. Search game and users
 Enter choice: 1
 ---------------------------
 Logout successful

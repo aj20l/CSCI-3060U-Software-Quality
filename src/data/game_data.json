@@ -15,7 +15,7 @@
         {
             "GID": 3,
             "gameName": "GTA5",
-            "gameSeller": "RichardRoe",
+            "gameSeller": "RichardDoe",
             "price": 49.99
         },
         {
@@ -26,39 +26,15 @@
         },
         {
             "GID": 5,
-            "gameName": "Peak",
-            "gameSeller": "JaneDoe",
-            "price": 29.989999771118164
-        },
-        {
-            "GID": 6,
-            "gameName": "Peak",
-            "gameSeller": "JohnDoe",
-            "price": 29.989999771118164
-        },
-        {
-            "GID": 7,
-            "gameName": "Peak",
-            "gameSeller": "RichardRoe",
-            "price": 29.989999771118164
-        },
-        {
-            "GID": 8,
-            "gameName": "Terraria",
-            "gameSeller": "ReLogic",
+            "gameName": "EldenRing",
+            "gameSeller": "BrokeMan",
             "price": 49.99
         },
         {
-            "GID": 9,
-            "gameName": "GTA5",
-            "gameSeller": "RockStar",
-            "price": 49.99
-        },
-        {
-            "GID": 10,
-            "gameName": "expensiveGame",
-            "gameSeller": "expensiveSeller",
-            "price": 6999.99
+          "GID": 6,
+          "gameName": "expensiveGame",
+          "gameSeller": "expensiveSeller",
+          "price": 569.99
         }
     ]
 }

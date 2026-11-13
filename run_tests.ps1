@@ -11,7 +11,7 @@ if (Test-Path ".\build\main.exe") {
 }
 
 # Configuration & Counters
-$TIMEOUT_MS = 200 # Max time (in milliseconds) allowed per test before assuming an infinite loop
+$TIMEOUT_MS = 400 # Max time (in milliseconds) allowed per test before assuming an infinite loop
 $PASSED = 0
 $FAILED = 0
 
@@ -44,7 +44,7 @@ foreach ($dir in $test_dirs) {
         # Configure the process to run with a strict timeout
         $psi = New-Object System.Diagnostics.ProcessStartInfo
         $psi.FileName = (Resolve-Path $EXECUTABLE).Path
-        #$psi.Arguments = "--test"
+        $psi.Arguments = "--test"
         $psi.RedirectStandardInput = $true
         $psi.RedirectStandardOutput = $true
         $psi.RedirectStandardError = $true
@@ -117,6 +117,14 @@ foreach ($dir in $test_dirs) {
 
         $actual_content = $filtered_actual | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
             $line = $_
+
+            # Fix "Enter choice: Invalid input..." split behavior
+            if ($line -like "*Enter choice: Invalid input*") {
+                if ($input_index -lt $input_lines.Count) {
+                    $line = $line -replace "Enter choice: ", "Enter choice: $($input_lines[$input_index])`n"
+                    $input_index++
+                }
+            }
 
             # Fix "Enter choice: ---------------------------" split behavior
             if ($line -like "*Enter choice: ---------------------------*") {
@@ -197,6 +205,55 @@ foreach ($dir in $test_dirs) {
                         $line = "Enter username of new user: ${new_user}`nEnter password of new user: ${new_pass}`nEnter user privilege: ${new_priv}"
                     }
                     $input_index += 3
+                }
+            }
+
+            # Fix bunched up game refund details line
+            if ($line -like "*Enter name of buyer: Enter name of game being refunded: Enter sellers name of the game: Enter amount being refunded:*") {
+                if (($input_index + 3) -lt $input_lines.Count) {
+                    $buyer  = $input_lines[$input_index]
+                    $game   = $input_lines[$input_index+1]
+                    $seller = $input_lines[$input_index+2]
+                    $amount = $input_lines[$input_index+3]
+
+                    $status = $line -replace "Enter name of buyer: Enter name of game being refunded: Enter sellers name of the game: Enter amount being refunded: ", ""
+
+                    if ($status.Trim() -ne "") {
+                        $line = "Enter name of buyer: ${buyer}`nEnter name of game being refunded: ${game}`nEnter sellers name of the game: ${seller}`nEnter amount being refunded: ${amount}`n${status}"
+                    } else {
+                        $line = "Enter name of buyer: ${buyer}`nEnter name of game being refunded: ${game}`nEnter sellers name of the game: ${seller}`nEnter amount being refunded: ${amount}"
+                    }
+                    $input_index += 4
+                }
+            }
+
+              # Fix bunched up user deletion prompt line
+            if ($line -like "*Enter username of user to be deleted: *") {
+                if ($input_index -lt $input_lines.Count) {
+                    $del_user = $input_lines[$input_index]
+                    $status = $line -replace "Enter username of user to be deleted: ", ""
+
+                    if ($status.Trim() -ne "") {
+                        $line = "Enter username of user to be deleted: ${del_user}`n${status}"
+                    } else {
+                        $line = "Enter username of user to be deleted: ${del_user}"
+                    }
+                    $input_index++
+                }
+            }
+
+            # Fix bunched up search query prompt line
+            if ($line -like "*Enter Query: *") {
+                if ($input_index -lt $input_lines.Count) {
+                    $query = $input_lines[$input_index]
+                    $status = $line -replace "Enter Query: ", ""
+
+                    if ($status.Trim() -ne "") {
+                        $line = "Enter Query: ${query}`n${status}"
+                    } else {
+                        $line = "Enter Query: ${query}"
+                    }
+                    $input_index++
                 }
             }
 

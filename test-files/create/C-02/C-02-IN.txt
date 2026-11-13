@@ -4,5 +4,5 @@ password
 2
 newuser
 password
-ADMIN
+0
 1

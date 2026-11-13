@@ -3,5 +3,5 @@ JaneRoe
 password
 5
 Terraria
-ReLogic
+JaneDoe
 1

@@ -1,15 +1,36 @@
-“Login to account”
-Login accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JohnDoe
+Enter your password: password
+Login successful
 
-“Enter transaction”
-Delete transaction initialized 
-Rejected: User is not an admin
-Delete transaction rejected 
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 3
+---------------------------
+Cannot delete user inproper account privilege
 
-“Login to account”
-Login accepted
-“Enter transaction”
-Delete transaction initialized 
-“Enter the name of the game to be deleted”
-Game Deleted
-Delete transaction accepted
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

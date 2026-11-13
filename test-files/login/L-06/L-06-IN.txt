@@ -1,3 +1,4 @@
-"Jane Doe"
-"correctPassword"
-login
+1
+JaneDoe
+password
+1

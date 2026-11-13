@@ -1,27 +1,41 @@
-“Login to account”
-Login accepted
-“Enter transaction”
-Refund transaction initialized 
-“Enter the buyers username”
-Buyers username accepted
-“Enter the sellers username”
-Sellers username accepted
-“Enter the amount being refunded”
-Refund amount accepted
-“Enter the game being refunded”
-Game name accepted
-“Seller cannot complete the refund”
-Refund transaction rejected
-“Enter transaction”
-Logout transaction accepted
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
 
-buyer: “Jane Doe”
-buyersPrivilege: “admin”
-buyersBalance: 0.00
-seller: “Richard Roe”
-sellersPrivilege: “sell-standard”
-sellersBalance: 0.00
-refundAmount: 100.00
-refundedGame: “Slay The Spire”
-message: “refund transaction rejected, seller does not have the credits for the refund“
-status: “rejected”
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 6
+---------------------------
+Enter name of buyer: JaneRoe
+Enter name of game being refunded: Minecraft
+Enter sellers name of the game: JohnDoe
+Enter amount being refunded: 49.99
+Buyer doesn't have the game
+Refund transaction rejected
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+9. Search game and users
+Enter choice: 1
+---------------------------
+Logout successful

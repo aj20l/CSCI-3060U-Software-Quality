@@ -35,6 +35,11 @@ bool UserManager::authenticateLogout(User* user) {
 }
 
 bool UserManager::addUser(std::string username, std::string password, Privilege privilege) {
+    // Makes it so that the username can't be more than 15 characters
+     if (username.length() > 15) {
+        return false;
+     }
+
     User* user = getUser(username);
     if(user) {
         std::cout << "A user with the same username already exists\n";
@@ -110,6 +115,8 @@ void UserManager::loadUsersFile() {
 }
 
 void UserManager::popUserFile(User* user) {
+    if(Mode::testMode) { return; }
+
     std::ifstream f(dataPath_);
     json data = json::parse(f);
     for(int i = 0; i < data["users"].size(); i++) {
@@ -126,6 +133,7 @@ void UserManager::popUserFile(User* user) {
 }
 
 void UserManager::appendUserFile(User* user) {
+    if(Mode::testMode) { return; }
     std::vector<int> gid = user->getGameListID();
 
     json newData = {
