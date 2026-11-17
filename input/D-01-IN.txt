@@ -1,4 +1,0 @@
-1
-JohnDoe
-password
-3

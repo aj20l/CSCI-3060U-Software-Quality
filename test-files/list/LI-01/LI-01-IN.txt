@@ -1,4 +1,0 @@
-Login - transaction call
-username: “Admin”
-
-list-games-for-sale - transaction call

@@ -1,4 +1,0 @@
-login
-"validUser"
-"correctPassword"
-logout

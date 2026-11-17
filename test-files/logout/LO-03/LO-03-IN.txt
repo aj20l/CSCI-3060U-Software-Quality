@@ -1,5 +1,0 @@
-List-game
-Buy-game
-login
-"validUser"
-"correctPassword"

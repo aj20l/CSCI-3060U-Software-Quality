@@ -1,3 +1,0 @@
-“User has signed in”
-
-“Error: Session already active”
