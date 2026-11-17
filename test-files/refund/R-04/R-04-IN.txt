@@ -1,7 +1,0 @@
-Login - transaction call
-username: “Richard Roe”
-
-Refund transaction - transaction call
-buyer: “Richard Roe”
-
-Logout - transaction call

@@ -1,7 +1,0 @@
-1
-JaneDoe
-password
-7
-fakeuser
-100
-1
