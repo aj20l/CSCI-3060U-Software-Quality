@@ -1,0 +1,7 @@
+admin01         AA 000500.00
+fulluser        FS 000100.00
+buyer01         BS 000100.00
+seller01        SS 000050.00
+pooruser        BS 000010.00
+deleteme        FS 000020.00
+END
