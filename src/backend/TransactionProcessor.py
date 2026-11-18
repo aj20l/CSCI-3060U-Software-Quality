@@ -1,37 +1,74 @@
-import AvailableGamesManager
-import UserAccountManager
-from backend.GameCollectionManager import GameCollectionManager
+from FileManager import FileManager
+from UserAccountManager import UserAccountsManager
+from GameCollectionManager import GameCollectionManager
+from AvailableGamesManager import AvailableGamesManager
+
+CODE_END_OF_SESSION = "00"
+CODE_CREATE = "01"
+CODE_DELETE = "02"
+CODE_SELL = "03"
+CODE_BUY = "04"
+CODE_REFUND = "05"
+CODE_ADD_CREDIT = "06"
+END_MARKER = "END"
+
+DATA_PATH = "../data"
+CURRENT_ACCOUNT_FILE = "currentaccounts.txt"
+GAMES_COLLECTION_FILE = "gamescollection.txt"
+AVAILABLE_GAMES_FILE = "availablegames.txt"
+MERGED_DAILY_TRANSACTION_FILE = "transout.atf"
+
+class Transaction:
+    def __init__(self, transaction):
+        self.transaction = transaction
+        self.code = transaction[:2]
+
+    def __str__(self):
+        return f"{self.transaction}"
+
+    def get_code(self):
+        return f"{self.code}"
 
 class TransactionProcessor:
-    userAccounts=UserAccountManager()
-    gameCollections=GameCollectionManager()
-    gamesList=AvailableGamesManager()
+    def __init__(self):
+        self.file_manager = FileManager(DATA_PATH)
+        self.user_account_manager = UserAccountsManager()
+        self.game_collection_manager = GameCollectionManager()
+        self.available_games = AvailableGamesManager()
 
+    # Loads the data from the transaction, old accounts, games, and games collection file
+    def load_files(self):
+        for line in self.file_manager.read_file(CURRENT_ACCOUNT_FILE):
+            self.user_account_manager.load_account(line)
 
+        for line in self.file_manager.read_file(GAMES_COLLECTION_FILE):
+            self.game_collection_manager.load_collection(line)
 
-    def createUserTransaction(self,line):
-        pass
+        for line in self.file_manager.read_file(AVAILABLE_GAMES_FILE):
+            self.available_games.load_game(line)
 
-    def deleteUserTransaction(self,line):
-        pass
+        self.user_account_manager.list_accounts()
+        self.game_collection_manager.list_collection()
+        self.available_games.list_games()
 
-    def sellTransaction(self,line):
-        pass
+        for line in self.file_manager.read_file(MERGED_DAILY_TRANSACTION_FILE):
+            self.process_daily_transactions(Transaction(line))
 
-    def buyTransaction(self,line):
-        pass
-
-    def refundTransaction(self,line):
-        pass
-
-    def addCreditTransaction(self,line):
-        pass
-
-    def sessionEnd(self,line):
-        pass
-
-    def transactionLogger(self):
-        pass
-
-    def failedTransactionlogger(self):
-        pass
+    # Loads data from the daily transaction file to be processed
+    def process_daily_transactions(self, transaction):
+        if transaction.get_code() == CODE_END_OF_SESSION:
+            pass
+        elif transaction.get_code() == CODE_CREATE:
+            pass
+        elif transaction.get_code() == CODE_DELETE:
+            pass
+        elif transaction.get_code() == CODE_SELL:
+            pass
+        elif transaction.get_code() == CODE_BUY:
+            pass
+        elif transaction.get_code() == CODE_REFUND:
+            pass
+        elif transaction.get_code() == CODE_ADD_CREDIT:
+            pass
+        else:
+            pass

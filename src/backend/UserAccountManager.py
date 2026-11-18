@@ -1,31 +1,36 @@
-import GameCollectionManager
-class UserAccountsManager:
-    userAccountsList=[]
+# Change these to be potentially global variables
+USERNAME_WIDTH = 15
+TYPE_WIDTH = 2
+CREDIT_WIDTH = 9
 
-    def loadUsers(self):
-        #return list/array
-        file = open("dailyTransaction.txt", "r")
-        for line in file:
-            newUser=User(line)
-            self.userAccountsList.append(newUser)
-        file.close()
-        pass
+class Account:
+    def __init__(self, username, privilege, credits):
+        self.username = username
+        self.privilege = privilege
+        self.credits = credits
+
+    def __str__(self):
+        return f"{self.username.ljust(USERNAME_WIDTH, " ")} {self.privilege.ljust(TYPE_WIDTH, " ")} {self.credits.ljust(CREDIT_WIDTH, " ")}"
+
+class UserAccountsManager:
+    def __init__(self):
+        self.current_accounts = []
+
+    def load_account(self, data):
+        data = data.split()
+        username = data[0]
+        privilege = data[1]
+        credits = data [2]
+        self.current_accounts.append(Account(username, privilege, credits))
+
     def saveUsers(self):
         pass
 
+    def list_accounts(self):
+        for account in self.current_accounts:
+            print(account)
 
 
-class User:
-    username=""
-    userType=""
-    credit=0
-    games=[]
-    def __init__(self, line):
-        self.username,self.userType,self.credit=line.split("_")
-    def addGame(self,games):
-        for game in games[self.username]:
-            self.games.append(game)
-            #games collection dict structure user has an array of games
 
 
 
