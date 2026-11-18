@@ -18,9 +18,10 @@ class User {
         double getCredit() const { return credit; }
 
         // Methods to check the user's permissions based on account type
-        bool isAdmin() const { return accountType == "AA"; }
-        bool canSell() const { return accountType != "BS"; }
-        bool canBuy() const { return accountType != "SS"; }
+        bool isAdmin() const { return accountType == "AA" || accountType == "AM"; }
+        bool canAlterUsers() const { return accountType == "AA"; }
+        bool canSell() const { return accountType != "BS" || accountType != "AM"; }
+        bool canBuy() const { return accountType != "SS" || accountType != "AM"; }
 
         // Methods to manage the user's credit
         bool hasCredit(double amount) const { return credit + 0.001 >= amount; }
@@ -31,6 +32,7 @@ class User {
         // Get the human-readable name of the account type
         string getTypeName() const {
             if (accountType == "AA") return "admin";
+            if (accountType == "AM") return "account-manager";
             if (accountType == "FS") return "full-standard";
             if (accountType == "BS") return "buy-standard";
             if (accountType == "SS") return "sell-standard";
@@ -40,6 +42,7 @@ class User {
         // Static method to convert a human-readable account type name to its corresponding code
         static string codeFromTypeName(const string& typeName) {
             if (typeName == "admin") return "AA";
+            if (typeName == "account-manager") return "AM";
             if (typeName == "full-standard") return "FS";
             if (typeName == "buy-standard") return "BS";
             if (typeName == "sell-standard") return "SS";

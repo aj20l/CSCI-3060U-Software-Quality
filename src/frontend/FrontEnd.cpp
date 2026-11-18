@@ -483,8 +483,10 @@ bool FrontEnd::promptForInput(const string& message, string& response) {
 // Determines if the current user is permitted to perform the specified command based on their account type
 bool FrontEnd::isPermitted(const string& command) const {
     const User& user = session.getCurrentUser();
-    if (command == "create" || command == "delete" || command == "refund" ||
-        command == "listaccounts") {
+    if (command == "create" || command == "delete") {
+        return user.canAlterUsers();
+    }
+    if (command == "refund" || command == "listaccounts") {
         return user.isAdmin();
     }
     if (command == "sell") return user.canSell();
