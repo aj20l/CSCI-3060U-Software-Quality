@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     string accountsFile = (argc > 1) ? argv[1] : "../data/currentaccounts.txt";
     string gamesFile = (argc > 2) ? argv[2] : "../data/availablegames.txt";
     string collectionFile = (argc > 3) ? argv[3] : "../data/gamescollection.txt";
-    string transactionFile = (argc > 4) ? argv[4] : "transout.atf";
+    string transactionFile = (argc > 4) ? argv[4] : "../data/transout.atf";
 
     FileManager files(accountsFile, gamesFile, collectionFile, transactionFile);
     FrontEnd frontEnd(cin, cout, files);
