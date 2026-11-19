@@ -18,6 +18,8 @@ GAMES_COLLECTION_FILE = "gamescollection.txt"
 AVAILABLE_GAMES_FILE = "availablegames.txt"
 MERGED_DAILY_TRANSACTION_FILE = "transout.atf"
 
+ERROR_PREFIX = "ERROR: "
+
 class Transaction:
     def __init__(self, transaction):
         self.transaction = transaction
@@ -72,3 +74,12 @@ class TransactionProcessor:
             pass
         else:
             pass
+
+class FailedTransactionLogger:
+    def __init__(self):
+        self.failed_transactions = []
+
+    def log_failure(self, transaction, reason):
+        error_message = f"{ERROR_PREFIX}Transaction '{transaction}' failed - Reason: {reason}"
+        self.failed_transactions.append(error_message)
+        print(error_message)
