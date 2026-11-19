@@ -17,10 +17,9 @@ class UserAccountsManager:
         self.current_accounts = []
 
     def load_account(self, data):
-        data = data.split()
-        username = data[0]
-        privilege = data[1]
-        credits = data [2]
+        username = data[:16]
+        privilege = data[16:19]
+        credits = data [19:]
         self.current_accounts.append(Account(username, privilege, credits))
 
     def saveUsers(self):

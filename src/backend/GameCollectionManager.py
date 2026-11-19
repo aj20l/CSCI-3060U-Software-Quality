@@ -15,9 +15,8 @@ class GameCollectionManager:
         self.game_collection = []
 
     def load_collection(self, data):
-        data = data.split()
-        game = data[0]
-        username = data [1]
+        game = data[:27]
+        username = data [27:]
         self.game_collection.append(GameCollection(game, username))
 
     def list_collection(self):

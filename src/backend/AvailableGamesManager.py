@@ -17,10 +17,9 @@ class AvailableGamesManager:
         self.available_games = []
 
     def load_game(self, data):
-        data = data.split()
-        game = data[0]
-        seller = data[1]
-        price = data [2]
+        game = data[:27]
+        seller = data[27:36]
+        price = data [36:]
         self.available_games.append(Game(game, seller, price))
 
     def saveUsers(self):
