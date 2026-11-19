@@ -22,7 +22,7 @@ ERROR_PREFIX = "ERROR: "
 
 class Transaction:
     def __init__(self, transaction):
-        self.transaction = transaction
+        self.transaction = transaction[3:]
         self.code = transaction[:2]
 
     def __str__(self):
@@ -62,18 +62,36 @@ class TransactionProcessor:
             pass
         elif transaction.get_code() == CODE_CREATE:
             pass
+            # should edit new user account file (edits currentaccount.txt)
         elif transaction.get_code() == CODE_DELETE:
             pass
+            # should edit new user account file (edits currentaccount.txt)
         elif transaction.get_code() == CODE_SELL:
-            pass
+            self.available_games.load_game(str(transaction))
+            # should edit available games file
         elif transaction.get_code() == CODE_BUY:
-            pass
+            self.game_collection_manager.load_collection(str(transaction))
+            # should edit game collection file
         elif transaction.get_code() == CODE_REFUND:
-            pass
+            transaction = str(transaction)
+            buyer = transaction[:16]
+            seller = transaction[16:32]
+            refund_amount = float(transaction[32:42])
+            
+            buyer_account = self.user_account_manager.get_account(buyer)
+            buyer_credit = float(buyer_account.get_credits()) + refund_amount
+            buyer_account.set_credits(str(buyer_credit).rjust(9,"0"))
+
+            seller_account = self.user_account_manager.get_account(seller)
+            seller_credit = float(seller_account.get_credits()) - refund_amount
+            seller_account.set_credits(str(seller_credit).rjust(9,"0"))
+            # should edit current account credit
         elif transaction.get_code() == CODE_ADD_CREDIT:
             pass
+            # should edit new user account file (edits currentaccount.txt)
         else:
             pass
+
 
 class FailedTransactionLogger:
     def __init__(self):
