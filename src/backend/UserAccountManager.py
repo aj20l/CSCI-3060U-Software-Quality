@@ -12,6 +12,9 @@ class Account:
     def __str__(self):
         return f"{self.username.ljust(USERNAME_WIDTH, " ")} {self.privilege.ljust(TYPE_WIDTH, " ")} {self.credits.ljust(CREDIT_WIDTH, " ")}"
 
+    def setCredits(self, credits):
+        self.credits = credits
+
 class UserAccountsManager:
     def __init__(self):
         self.current_accounts = []
