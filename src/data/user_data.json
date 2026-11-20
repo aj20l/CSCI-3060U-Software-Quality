@@ -1,0 +1,104 @@
+{
+    "users": [
+        {
+            "UID": 1,
+            "balance": 150.01998901367188,
+            "games": [
+                1,
+                2,
+                3,
+                8
+            ],
+            "password": "password",
+            "privilege": 0,
+            "username": "JaneDoe"
+        },
+        {
+            "UID": 2,
+            "balance": 29450.0,
+            "games": [
+                1,
+                4
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "JohnDoe"
+        },
+        {
+            "UID": 3,
+            "balance": 570.798828125,
+            "games": [
+                3,
+                9,
+                8,
+                10
+            ],
+            "password": "password",
+            "privilege": 2,
+            "username": "JaneRoe"
+        },
+        {
+            "UID": 4,
+            "balance": 250.0,
+            "games": null,
+            "password": "password",
+            "privilege": 3,
+            "username": "RichardRoe"
+        },
+        {
+            "UID": 5,
+            "balance": 999999,
+            "games": [
+                3,
+                4
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "JohnRoe"
+        },
+        {
+            "UID": 5,
+            "balance": 10,
+            "games": [
+                3
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "RichardDoe"
+        },
+        {
+            "UID": 6,
+            "balance": 10,
+            "games": [
+                3
+            ],
+            "password": "password",
+            "privilege": 1,
+            "username": "username"
+        },
+        {
+            "UID": 7,
+            "balance": 0.0,
+            "games": [],
+            "password": "password",
+            "privilege": 0,
+            "username": "thisNameIsTooLong"
+        },
+        {
+            "UID": 8,
+            "balance": 0.0,
+            "games": [],
+            "password": "password",
+            "privilege": 0,
+            "username": "newuser"
+        },
+        {
+            "UID": 9,
+            "balance": 0.0,
+            "games": [],
+            "password": "password",
+            "privilege": 0,
+            "username": "username5"
+        }
+    ]
+}

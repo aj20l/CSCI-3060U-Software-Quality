@@ -1,0 +1,8 @@
+1
+JaneDoe
+password
+2
+thisNameIsTooLong
+password
+FULLSTANDARD
+1

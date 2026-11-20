@@ -1,0 +1,10 @@
+Login - transaction call
+username: “Jane Doe”
+
+Refund transaction - transaction call
+buyer: “Jane Doe”
+seller: “Richard Roe”
+refundAmount: 100.00
+gameName: “Slay The Spire”
+
+Logout - transaction call

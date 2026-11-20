@@ -1,0 +1,28 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Enter the amount being refunded”
+Refund amount accepted
+“Enter the game being refunded”
+Game name accepted
+Refund transaction accepted
+Refund transaction logged
+“Refunded Slay The Spire”
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Roe”
+buyersPrivilege: “buy-standard”
+buyersBalance: 0
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 100.00
+refundAmount: 100.00
+refundedGame: “Slay The Spire”
+message: “refund transaction accepted, Slay The Spire has been refunded for 100.00 credits”
+status: “accepted”

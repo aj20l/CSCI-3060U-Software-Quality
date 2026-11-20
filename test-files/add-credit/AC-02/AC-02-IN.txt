@@ -1,0 +1,6 @@
+1
+JohnDoe
+password
+7
+100.00
+1

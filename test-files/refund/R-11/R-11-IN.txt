@@ -1,0 +1,10 @@
+Login - transaction call
+username: “John Doe”
+
+Refund transaction - transaction call
+buyer: “John Doe”
+seller: “Richard Roe”
+refundAmount: 100.00
+gameName: “Halo”
+
+Logout - transaction call

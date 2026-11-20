@@ -1,0 +1,8 @@
+Login - transaction call
+username: “Jane Roe”
+
+Refund transaction - transaction call
+buyer: “Jane Doe”
+seller: “Not A User”
+
+Logout - transaction call
