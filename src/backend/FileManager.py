@@ -2,6 +2,7 @@ class FileManager:
     def __init__(self, filePath):
         self.filePath = filePath
 
+    # reads from a given file, entering each line into a list to be returned
     def read_file(self, file):
         entry = []
         with open(self.filePath + "/" + file, "r", encoding="utf-8") as f:
@@ -13,6 +14,7 @@ class FileManager:
         f.close()
         return entry
 
+    # writes to a given file from a list of data
     def write_file(self, file, data_list):
         with open(self.filePath + "/" + file, "w", encoding="utf-8") as f:
             for data in data_list:
