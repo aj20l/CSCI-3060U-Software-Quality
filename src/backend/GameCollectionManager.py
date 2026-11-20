@@ -1,6 +1,4 @@
-# Change these to be potentially global variables
-GAME_NAME_WIDTH = 26
-USERNAME_WIDTH = 15
+import backend.Codes as Code
 
 class GameCollection:
     def __init__(self, game, username):
@@ -8,7 +6,7 @@ class GameCollection:
         self.username = username
 
     def __str__(self):
-        return f"{self.game.ljust(GAME_NAME_WIDTH, " ")} {self.username.ljust(USERNAME_WIDTH, " ")}"
+        return f"{self.game.ljust(Code.GAME_NAME_WIDTH, " ")} {self.username.ljust(Code.USERNAME_WIDTH, " ")}"
 
 class GameCollectionManager:
     def __init__(self):

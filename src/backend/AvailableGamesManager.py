@@ -1,7 +1,4 @@
-# Change these to be potentially global variables
-GAME_NAME_WIDTH = 26
-SELLER_USERNAME_WIDTH = 15
-PRICE_WIDTH = 6
+import backend.Codes as Code
 
 class Game:
     def __init__(self, game, seller, price):
@@ -10,7 +7,7 @@ class Game:
         self.price = price
 
     def __str__(self):
-        return f"{self.game.ljust(GAME_NAME_WIDTH, " ")} {self.seller.ljust(SELLER_USERNAME_WIDTH, " ")} {self.price.ljust(PRICE_WIDTH, " ")}"
+        return f"{self.game.ljust(Code.GAME_NAME_WIDTH, " ")} {self.seller.ljust(Code.SELLER_USERNAME_WIDTH, " ")} {self.price.ljust(Code.PRICE_WIDTH, " ")}"
 
 class AvailableGamesManager:
     def __init__(self):
