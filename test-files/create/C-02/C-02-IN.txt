@@ -1,8 +1,0 @@
-1
-JaneDoe
-password
-2
-newuser
-password
-ADMIN
-1

@@ -1,0 +1,21 @@
+login
+admin01
+create
+newplayer
+sell-standard
+addcredit
+200
+newplayer
+buy
+GTA VI
+seller01
+sell
+Portal
+9.99
+refund
+buyer01
+seller01
+5
+delete
+deleteme
+logout

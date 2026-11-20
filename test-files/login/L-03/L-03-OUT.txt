@@ -1,2 +1,0 @@
-“User signed in”
-“Games list loaded”

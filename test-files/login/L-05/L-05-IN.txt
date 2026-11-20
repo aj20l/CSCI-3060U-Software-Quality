@@ -1,4 +1,0 @@
-"John Doe"
-"correctPassword"
-Login
-Refund transaction

@@ -1,3 +1,0 @@
-"wrongUser"
-"correctPassword"
-login
