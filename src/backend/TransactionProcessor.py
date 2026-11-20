@@ -61,10 +61,16 @@ class TransactionProcessor:
         if transaction.get_code() == CODE_END_OF_SESSION:
             pass
         elif transaction.get_code() == CODE_CREATE:
-            pass
+            #change this to split on the spaces?
+            newUser=Account(str(transaction)[3:18],str(transaction)[18:21],str(transaction)[21:31])
+            newUser=self.user_account_manager.current_accounts.append(newUser)
+           
             # should edit new user account file (edits currentaccount.txt)
         elif transaction.get_code() == CODE_DELETE:
-            pass
+            username=str(transaction)[3:18]
+            deletedUser=self.user_account_manager.get_account(username)
+            newUser=self.user_account_manager.current_accounts.remove(deletedUser)
+
             # should edit new user account file (edits currentaccount.txt)
         elif transaction.get_code() == CODE_SELL:
             self.available_games.load_game(str(transaction))
@@ -87,6 +93,10 @@ class TransactionProcessor:
             seller_account.set_credits(str(seller_credit).rjust(9,"0"))
             # should edit current account credit
         elif transaction.get_code() == CODE_ADD_CREDIT:
+            username=str(transaction)[3:18]
+            if self.user_account_manager.get_account(username):
+                self.user_account_manager.get_account(username).add_credit(int(str(transaction).split("_")[2]))
+
             pass
             # should edit new user account file (edits currentaccount.txt)
         else:
