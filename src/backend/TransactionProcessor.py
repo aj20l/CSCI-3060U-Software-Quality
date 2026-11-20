@@ -4,8 +4,8 @@ from GameCollectionManager import GameCollectionManager
 from AvailableGamesManager import AvailableGamesManager
 import Codes as Code
 
+# helper class structure for daily transaction data
 class Transaction:
-    # helper class structure for daily transaction data
     def __init__(self, transaction):
         self.transaction = transaction[3:]
         self.code = transaction[:2]
@@ -23,7 +23,13 @@ class TransactionProcessor:
         self.game_collection_manager = GameCollectionManager()
         self.available_games_manager = AvailableGamesManager()
 
-    # Loads the data from the transaction, old accounts, games, and games collection file
+    # helper method to run transaction processor
+    def run(self):
+        self.load_files()
+        self.process_daily_transaction_file()
+        self.write_files()
+
+    # loads the data from the transaction, old accounts, games, and games collection file
     # before processing the daily transactions
     def load_files(self):
         for line in self.file_manager.read_file(Code.CURRENT_ACCOUNT_FILE):
@@ -39,22 +45,22 @@ class TransactionProcessor:
         # self.game_collection_manager.list_collection()
         # self.available_games_manager.list_games()
 
-        for line in self.file_manager.read_file(Code.MERGED_DAILY_TRANSACTION_FILE):
-            self.process_daily_transactions(Transaction(line))
-
-        # writes to respected files after daily transactions have been processed
+    # writes to respected files after daily transactions have been processed
+    def write_files(self):
         self.file_manager.write_file(Code.CURRENT_ACCOUNT_FILE, 
                                      self.user_account_manager.get_accounts())
         self.file_manager.write_file(Code.GAMES_COLLECTION_FILE, 
                                      self.game_collection_manager.get_collestions())
         self.file_manager.write_file(Code.AVAILABLE_GAMES_FILE, 
                                      self.available_games_manager.get_games())
-
         
+    # processes data in daily transaction file
+    def process_daily_transaction_file(self):
+        for line in self.file_manager.read_file(Code.MERGED_DAILY_TRANSACTION_FILE):
+            self.process_transactions(Transaction(line))
 
-    # from a given line from the daily transaction, processes
-    # the data in the line based on the code it has
-    def process_daily_transactions(self, transaction):
+    # help method to process transaction
+    def process_transactions(self, transaction):
         if transaction.get_code() == Code.CODE_END_OF_SESSION:
             pass
         elif transaction.get_code() == Code.CODE_CREATE:
