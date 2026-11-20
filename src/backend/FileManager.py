@@ -13,5 +13,8 @@ class FileManager:
         f.close()
         return entry
 
-    def write_file(self):
-        pass
+    def write_file(self, file, data_list):
+        with open(self.filePath + "/" + file, "w", encoding="utf-8") as f:
+            for data in data_list:
+                f.write(str(data) + "\n")
+            f.write("END\n")

@@ -1,5 +1,4 @@
-import backend.Codes as Code
-
+import Codes as Code
 class Account:
     def __init__(self, username, privilege, credits):
         self.username = username
@@ -7,7 +6,7 @@ class Account:
         self.credits = credits
 
     def __str__(self):
-        return f"{self.username.ljust(Code.USERNAME_WIDTH, " ")} {self.privilege.ljust(Code.TYPE_WIDTH, " ")} {self.credits.ljust(Code.CREDIT_WIDTH, " ")}"
+        return f"{self.username.ljust(Code.USERNAME_WIDTH, " ")}{self.privilege.ljust(Code.TYPE_WIDTH, " ")}{self.credits.ljust(Code.CREDIT_WIDTH, " ")}"
 
     def get_username(self):
         return self.username
@@ -32,6 +31,14 @@ class UserAccountsManager:
         for account in self.current_accounts:
             if account.get_username() == username:
                 return account
+
+    def get_accounts(self):
+        return self.current_accounts
+
+    def remove_account(self, r_account):
+        for index, account in enumerate(self.current_accounts):
+            if account == r_account:
+                self.current_accounts.pop(index)
 
     def list_accounts(self):
         for account in self.current_accounts:
