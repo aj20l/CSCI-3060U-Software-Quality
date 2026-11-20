@@ -1,7 +1,4 @@
-# Change these to be potentially global variables
-USERNAME_WIDTH = 15
-TYPE_WIDTH = 2
-CREDIT_WIDTH = 9
+import backend.Codes as Code
 
 class Account:
     def __init__(self, username, privilege, credits):
@@ -10,7 +7,7 @@ class Account:
         self.credits = credits
 
     def __str__(self):
-        return f"{self.username.ljust(USERNAME_WIDTH, " ")} {self.privilege.ljust(TYPE_WIDTH, " ")} {self.credits.ljust(CREDIT_WIDTH, " ")}"
+        return f"{self.username.ljust(Code.USERNAME_WIDTH, " ")} {self.privilege.ljust(Code.TYPE_WIDTH, " ")} {self.credits.ljust(Code.CREDIT_WIDTH, " ")}"
 
     def get_username(self):
         return self.username
