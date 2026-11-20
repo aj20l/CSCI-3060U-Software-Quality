@@ -1,4 +1,4 @@
-import backend.Codes as Code
+import Codes as Code
 
 class GameCollection:
     def __init__(self, game, username):
@@ -6,7 +6,7 @@ class GameCollection:
         self.username = username
 
     def __str__(self):
-        return f"{self.game.ljust(Code.GAME_NAME_WIDTH, " ")} {self.username.ljust(Code.USERNAME_WIDTH, " ")}"
+        return f"{self.game.ljust(Code.GAME_NAME_WIDTH, " ")}{self.username.ljust(Code.USERNAME_WIDTH, " ")}"
 
 class GameCollectionManager:
     def __init__(self):
@@ -16,6 +16,9 @@ class GameCollectionManager:
         game = data[:27]
         username = data [27:36]
         self.game_collection.append(GameCollection(game, username))
+
+    def get_collestions(self):
+        return self.game_collection
 
     def list_collection(self):
         for collection in self.game_collection:
