@@ -1,0 +1,15 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username rejected
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Richard Roe”
+buyersPrivilege: “sell-standard”
+buyersBalance: 0
+message: “refund transaction rejected, the buyer account does not have privileges to refund game”
+status: “rejected”

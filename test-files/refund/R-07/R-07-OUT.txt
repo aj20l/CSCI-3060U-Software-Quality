@@ -1,0 +1,19 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username Rejected
+“Current user is not a user”
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Doe”
+buyersPrivilege: “admin”
+buyersBalance: 0
+seller: “Not A User”
+message: “refund transaction rejected, one of the users in the transaction does not exist“
+status: “rejected”

@@ -1,0 +1,14 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Delete transaction initialized 
+“Enter name of user”
+<user> deleted
+Delete transaction accepted
+
+“Enter transaction”
+Buy transaction initialized
+“Enter name of game”
+Rejected: No game with that name
+Buy transaction rejected

@@ -1,0 +1,15 @@
+“Login to account”
+Login accepted
+
+“Enter transaction”
+Delete transaction initialized 
+Rejected: User is not an admin
+Delete transaction rejected 
+
+“Login to account”
+Login accepted
+“Enter transaction”
+Delete transaction initialized 
+“Enter the name of the game to be deleted”
+Game Deleted
+Delete transaction accepted

@@ -1,0 +1,26 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Enter the amount being refunded”
+Refund amount accepted
+“Enter the game being refunded”
+Game name rejected
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “John Doe”
+buyersPrivilege: “full-standard”
+buyersBalance: 0
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 100.00
+refundAmount: 100.00
+refundedGame: “Slay The Pire”
+message: “refund transaction rejected, Slay the Pire doesn’t exist as a game”
+status: “rejected”

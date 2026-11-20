@@ -1,0 +1,21 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Current user is not related to refund transaction”
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Doe”
+buyersPrivilege: “admin”
+buyersBalance: 0
+seller: “Richard Roe”
+sellersPrivilege: “sell-standard”
+sellersBalance: 100.00
+message: “refund transaction rejected, the user initiating the refund is not related to the refund itself“
+status: “rejected”

@@ -1,0 +1,21 @@
+“Login to account”
+Login accepted
+“Enter transaction”
+Refund transaction initialized 
+“Enter the buyers username”
+Buyers username accepted
+“Enter the sellers username”
+Sellers username accepted
+“Cannot refund self”
+Refund transaction rejected
+“Enter transaction”
+Logout transaction accepted
+
+buyer: “Jane Doe”
+buyersPrivilege: “admin”
+buyersBalance: 0
+seller: “Jane Doe”
+sellersPrivilege: “admin”
+sellersBalance: 0
+message: “refund transaction rejected, cannot refund self”
+status: “rejected”

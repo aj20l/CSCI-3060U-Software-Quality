@@ -1,0 +1,11 @@
+Login - transaction call
+username: “Admin”
+
+Delete user transaction - transaction call
+delete: “Admin”
+
+Delete user transaction - transaction call
+delete: “user-that-does-not-exist”
+
+Delete user transaction - transaction call
+delete: “user-that-does-exist”

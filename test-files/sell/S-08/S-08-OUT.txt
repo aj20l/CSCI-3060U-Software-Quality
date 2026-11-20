@@ -1,0 +1,37 @@
+
+===== STORE OPTIONS =====
+1. Login
+0. Exit
+Enter choice: 1
+---------------------------
+Enter your username: JaneDoe
+Enter your password: password
+Login successful
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+Enter choice: 4
+---------------------------
+Enter name of game: Peak
+Enter price of game: 1000
+Sell transaction rejected, invalid game price
+
+===== STORE OPTIONS =====
+1. Logout
+2. Create
+3. Delete
+4. Sell
+5. Buy
+6. Refund
+7. Add Credit
+8. List Active Users
+Enter choice: 1
+---------------------------
+Logout successful
