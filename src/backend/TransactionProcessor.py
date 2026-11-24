@@ -70,7 +70,7 @@ class TransactionProcessor:
         elif transaction.get_code() == Code.CODE_DELETE:
             # processes transactions with delete code by username
             transaction = str(transaction)
-            username = transaction[:16]
+            username = transaction[:Code.USERNAME_WIDTH]
             account = self.user_account_manager.get_account(username)
             self.user_account_manager.remove_account(account)
 
@@ -88,29 +88,34 @@ class TransactionProcessor:
             # processess transaction with refund code by obtaining
             # the buyer, seller, and refund amount in the logged transaction
             transaction = str(transaction)
-            buyer = transaction[:16]
-            seller = transaction[16:32]
-            refund_amount = float(transaction[32:42])
+            offset = 0
+            buyer = transaction[offset:offset + Code.USERNAME_WIDTH]
+            offset += Code.USERNAME_WIDTH + 1
+            seller = transaction[offset:offset + Code.USERNAME_WIDTH]
+            offset += Code.USERNAME_WIDTH + 1
+            refund_amount = float(transaction[offset:offset + Code.CREDIT_WIDTH])
             
             buyer_account = self.user_account_manager.get_account(buyer)
             buyer_credit = float(buyer_account.get_credits()) + refund_amount
-            formatted = f"{buyer_credit:.2f}".rjust(9,"0")
+            formatted = f"{buyer_credit:.2f}".rjust(Code.CREDIT_WIDTH,"0")
             buyer_account.set_credits(formatted)
 
             seller_account = self.user_account_manager.get_account(seller)
             seller_credit = float(seller_account.get_credits()) - refund_amount
-            formatted = f"{seller_credit:.2f}".rjust(9,"0")
+            formatted = f"{seller_credit:.2f}".rjust(Code.CREDIT_WIDTH,"0")
             seller_account.set_credits(formatted)
 
         elif transaction.get_code() == Code.CODE_ADD_CREDIT:
             # processes transactions with add credit code
             transaction = str(transaction)
-            username = transaction[:16]
-            added_credits = float(transaction[19:29])
+            offset = 0
+            username = transaction[offset:offset + Code.USERNAME_WIDTH]
+            offset += Code.USERNAME_WIDTH + 1 + Code.TYPE_WIDTH + 1
+            added_credits = float(transaction[offset:offset + Code.CREDIT_WIDTH])
 
             account = self.user_account_manager.get_account(username)
             new_credit_amount = float(account.get_credits()) + added_credits
-            formatted = f"{new_credit_amount:.2f}".rjust(9,"0")
+            formatted = f"{new_credit_amount:.2f}".rjust(Code.CREDIT_WIDTH,"0")
             account.set_credits(formatted)
 
         else:
