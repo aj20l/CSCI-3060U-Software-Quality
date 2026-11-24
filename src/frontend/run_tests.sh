@@ -14,7 +14,7 @@
 
 RUN_NAME=${1:-latest}
 PROGRAM=${2:-./distribution-system}
-DATA_DIR=../data
+DATA_DIR=tests/data
 INPUT_DIR=tests/inputs
 OUTPUT_DIR=tests/outputs/$RUN_NAME
 WORK_DIR=$OUTPUT_DIR/work      # scratch copy for the data files
