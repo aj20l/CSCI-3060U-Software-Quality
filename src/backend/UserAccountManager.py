@@ -1,6 +1,5 @@
 import Codes as Code
 
-# help class for accounts information
 class Account:
     def __init__(self, username, privilege, credits):
         self.username = username
@@ -8,7 +7,7 @@ class Account:
         self.credits = credits
 
     def __str__(self):
-        return f"{self.username.ljust(Code.USERNAME_WIDTH, " ")}{self.privilege.ljust(Code.TYPE_WIDTH, " ")}{self.credits.ljust(Code.CREDIT_WIDTH, " ")}"
+        return f"{self.username.ljust(Code.USERNAME_WIDTH, " ")} {self.privilege.ljust(Code.TYPE_WIDTH, " ")} {self.credits.ljust(Code.CREDIT_WIDTH, " ")}"
 
     def get_username(self):
         return self.username
@@ -24,11 +23,15 @@ class UserAccountsManager:
     def __init__(self):
         self.current_accounts = []
 
-    # splices a transactions input data to obtain needed data to load an account
+    # slices a transactions input data to obtain needed data to load an account
     def load_account(self, data):
-        username = data[:16]
-        privilege = data[16:19]
-        credits = data [19:29]
+        offset = 0
+        username = data[offset:offset + Code.USERNAME_WIDTH]
+        offset += Code.USERNAME_WIDTH + 1
+        privilege = data[offset:offset + Code.TYPE_WIDTH]
+        offset += Code.TYPE_WIDTH + 1
+        credits = data[offset:offset + Code.CREDIT_WIDTH]
+
         self.current_accounts.append(Account(username, privilege, credits))
 
     # returns an account bases of if it matches the user being searched
@@ -46,12 +49,3 @@ class UserAccountsManager:
         for index, account in enumerate(self.current_accounts):
             if account == r_account:
                 self.current_accounts.pop(index)
-
-    def list_accounts(self):
-        for account in self.current_accounts:
-            print(account)
-
-
-
-
-
