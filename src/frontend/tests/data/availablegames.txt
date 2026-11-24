@@ -1,0 +1,6 @@
+Spiderman                  seller01        015.00
+Hades                      seller01        024.99
+Celeste                    admin01         019.99
+Minecraft                  fulluser        020.00
+GTA V                      deleteme        060.00
+END
