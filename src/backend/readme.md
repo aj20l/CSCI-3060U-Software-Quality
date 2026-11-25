@@ -39,11 +39,24 @@ The `TransactionProcessor` reads lines from `transout.atf` and parses them based
 
 ## How to Run
 
-1. Ensure you have Python 3.x installed.
+1. Ensure you have installed all the requirments in the requirements.txt file in your virtual python environment
 2. Navigate to `./backend` directory
 3. Verify there exits `currentaccounts.txt`, `availablegames.txt` `gamescollection.txt`, and `transout.atf` files exists in the data file
 3. Execute the backend script from your terminal:
 
 ```bash
 python backend.py
+```
+
+# How to Run Tests
+
+1. Navigate to the `./backend` directory
+2. Ensure required packages have been installed in your virtual python environment
+2. Execute script in terminal
+```bash
+pytest ./tests/
+```
+To run specific test for a single test file
+```bash
+pytest ./tests/test_file_name
 ```
