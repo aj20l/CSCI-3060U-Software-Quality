@@ -1,5 +1,3 @@
-import pytest
-
 from UserAccountManager import UserAccountsManager, Account
 import Codes as Code
 

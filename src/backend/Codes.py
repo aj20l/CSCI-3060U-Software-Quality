@@ -8,6 +8,7 @@ CODE_ADD_CREDIT = "06"
 END_MARKER = "END"
 
 DATA_PATH = "../data"
+TEST_DATA_PATH = "tests/data"
 CURRENT_ACCOUNT_FILE = "currentaccounts.txt"
 GAMES_COLLECTION_FILE = "gamescollection.txt"
 AVAILABLE_GAMES_FILE = "availablegames.txt"

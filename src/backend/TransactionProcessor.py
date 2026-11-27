@@ -17,8 +17,8 @@ class Transaction:
         return f"{self.code}"
 
 class TransactionProcessor:
-    def __init__(self):
-        self.file_manager = FileManager(Code.DATA_PATH)
+    def __init__(self, data_path=Code.DATA_PATH):
+        self.file_manager = FileManager(data_path)
         self.user_account_manager = UserAccountsManager()
         self.game_collection_manager = GameCollectionManager()
         self.available_games_manager = AvailableGamesManager()
